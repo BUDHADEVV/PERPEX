@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    /* --- DESKTOP: vertical grid slider --- */
     .slider-container {
       overflow: hidden;
       height: 600px;
@@ -32,21 +33,58 @@
       background: #18181b;
       display: block;
     }
+    /* --- MOBILE: horizontal image slider below hero --- */
     @media (max-width: 700px) {
-      .slider-container { width: 93vw; height: 270px;}
-      .slider-track { grid-auto-rows: 75px; }
-      .mobile-bg-video { display: block !important; }
-      .mobile-slider-section { display: flex !important; }
-      .desktop-slider { display: none !important; }
-      .mobile-hero-flex { flex-direction: column !important; }
-      .mobile-only { display: block !important; }
+      .desktop-slider-only { display: none !important; }
+      .mobile-slider-row {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 12px !important;
+        width: 100vw !important;
+        overflow-x: auto !important;
+        overflow-y: visible !important;
+        margin: 0 -8vw; /* edge-to-edge effect */
+        padding: 16px 8vw 12px 8vw; /* top and sides */
+        box-sizing: border-box;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      .mobile-slider-row::-webkit-scrollbar { display: none; }
+      .slider-img {
+        width: 65vw !important;
+        max-width: 260px !important;
+        height: 80vw !important;
+        min-width: 180px;
+        max-height: 340px;
+        aspect-ratio: 1/1.2;
+        border-radius: 0.9rem;
+        flex: 0 0 auto;
+      }
     }
     @media (min-width: 701px) {
-      .mobile-bg-video { display: none !important; }
-      .mobile-slider-section { display: none !important; }
-      .desktop-slider { display: flex !important; }
-      .mobile-only { display: none !important; }
+      .mobile-slider-row { display: none !important; }
     }
+    /* Extra: Center hero text on mobile for best look */
+    @media (max-width: 700px) {
+      .hero-mobile-center {
+        margin: 0 auto;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        text-align: center !important;
+        align-items: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+    }
+    /* Expert Slider Styles */
+    .expert-slider { scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none; }
+    .expert-slider::-webkit-scrollbar { display: none; }
+    .expert-card { transition: transform 0.3s ease-in-out; }
+    .expert-card:hover { transform: scale(1.05); }
+    .nav-button { transition: all 0.3s ease; }
+    .nav-button:hover { background-color: rgba(41, 121, 255, 0.1); }
+    .hidden { display: none !important; }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -55,21 +93,10 @@
   <img src="your-logo.jpg" alt="PerpeX Logo" class="h-10 w-auto object-contain" />
 </nav>
 
-<!-- HERO SECTION: Only left on mobile, both on desktop -->
-<section class="w-full flex flex-col lg:flex-row justify-center items-stretch min-h-[90vh] gap-2 px-2 py-10 md:py-20 md:px-12 max-w-7xl mx-auto mobile-hero-flex" style="position:relative;">
-  <!-- MOBILE-ONLY VIDEO BG, absolutely behind left hero, just for hero section -->
-<div class="mobile-bg-video" style="display:none; position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;overflow:hidden;border-radius:1.25rem;">
-  <iframe
-    src="https://www.youtube.com/embed/jLMsZzcWZg8?autoplay=1&controls=0&mute=1&modestbranding=1&showinfo=0&rel=0&fs=0&playsinline=1&loop=1&playlist=jLMsZzcWZg8"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
-    style="width:100vw;height:130vw;min-height:100%;object-fit:cover;background:#000;pointer-events:none;aspect-ratio:9/16;position:absolute;top:0;left:0;border-radius:1.25rem;">
-  </iframe>
-</div>
-
-  <!-- LEFT: Hero Text (always visible and overlays video on mobile) -->
-  <div class="lg:w-[55%] flex flex-col justify-center pl-2 md:pl-8 pr-4 py-4 relative z-10" style="background:rgba(0,0,0,0.15)">
+<!-- HERO SECTION -->
+<section class="w-full flex flex-col lg:flex-row justify-center items-stretch min-h-[90vh] gap-2 px-2 py-10 md:py-20 md:px-12 max-w-7xl mx-auto">
+  <!-- LEFT: Hero Text -->
+  <div class="lg:w-[55%] flex flex-col justify-center pl-2 md:pl-8 pr-4 py-4 hero-mobile-center">
     <h1 class="font-extrabold text-[2.7rem] md:text-[3.5rem] leading-tight mb-3 tracking-tight uppercase">
       Hello <span class="text-[#2979FF]">Founder!</span>
     </h1>
@@ -83,8 +110,8 @@
       Book My Interview Slot
     </a>
   </div>
-  <!-- RIGHT: ONLY DESKTOP | Slider -->
-  <div class="lg:w-[45%] flex items-center justify-center min-h-[600px] desktop-slider">
+  <!-- DESKTOP ONLY: Image Slider to right -->
+  <div class="lg:w-[45%] flex items-center justify-center min-h-[600px] desktop-slider-only">
     <div class="slider-container">
       <div class="slider-track">
         <img src="logo1.jpg" alt="Logo 1" class="slider-img" />
@@ -93,7 +120,6 @@
         <img src="logo4.jpg" alt="Logo 4" class="slider-img" />
         <img src="logo5.jpg" alt="Logo 5" class="slider-img" />
         <img src="logo6.jpg" alt="Logo 6" class="slider-img" />
-        <!-- Repeat for seamless loop -->
         <img src="logo1.jpg" alt="Logo 1" class="slider-img" />
         <img src="logo2.jpg" alt="Logo 2" class="slider-img" />
         <img src="logo3.jpg" alt="Logo 3" class="slider-img" />
@@ -104,29 +130,292 @@
     </div>
   </div>
 </section>
+<!-- MOBILE ONLY: Hero ImageSlider below hero -->
+<div class="mobile-slider-row" style="display:none;">
+  <img src="logo1.jpg" alt="Logo 1" class="slider-img" />
+  <img src="logo2.jpg" alt="Logo 2" class="slider-img" />
+  <img src="logo3.jpg" alt="Logo 3" class="slider-img" />
+  <img src="logo4.jpg" alt="Logo 4" class="slider-img" />
+  <img src="logo5.jpg" alt="Logo 5" class="slider-img" />
+  <img src="logo6.jpg" alt="Logo 6" class="slider-img" />
+</div>
 
-<!-- Only on mobile: slider after hero -->
-<section class="mobile-slider-section" style="display:none;flex-direction:row;justify-content:center;align-items:center;width:100%;">
-  <div class="slider-container" style="margin: 0 auto;">
-    <div class="slider-track">
-      <img src="logo1.jpg" alt="Logo 1" class="slider-img" />
-      <img src="logo2.jpg" alt="Logo 2" class="slider-img" />
-      <img src="logo3.jpg" alt="Logo 3" class="slider-img" />
-      <img src="logo4.jpg" alt="Logo 4" class="slider-img" />
-      <img src="logo5.jpg" alt="Logo 5" class="slider-img" />
-      <img src="logo6.jpg" alt="Logo 6" class="slider-img" />
-      <img src="logo1.jpg" alt="Logo 1" class="slider-img" />
-      <img src="logo2.jpg" alt="Logo 2" class="slider-img" />
-      <img src="logo3.jpg" alt="Logo 3" class="slider-img" />
-      <img src="logo4.jpg" alt="Logo 4" class="slider-img" />
-      <img src="logo5.jpg" alt="Logo 5" class="slider-img" />
-      <img src="logo6.jpg" alt="Logo 6" class="slider-img" />
+<!-- What's in every PerpeX B-School Program Section -->
+<section class="w-full bg-black py-16 md:py-20 px-4 md:px-12">
+  <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+    <!-- LEFT: Title and Buttons -->
+    <div class="lg:w-[45%] text-left">
+      <h2 class="text-white font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-8">
+        What's in every PerpeX B-School program?
+      </h2>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#" class="bg-[#2979FF] text-white font-semibold py-3 px-8 rounded-lg text-lg hover:bg-blue-600 transition shadow-lg text-center">
+          Book Now
+        </a>
+        <a href="#" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg text-lg hover:bg-white hover:text-black transition text-center flex items-center justify-center gap-2">
+          🎁 Watch Trailer
+        </a>
+      </div>
+    </div>
+    <!-- RIGHT: Features List -->
+    <div class="lg:w-[55%] text-white space-y-6">
+      <div class="flex items-start gap-4">
+        <div class="text-2xl">📚</div>
+        <div><p class="text-lg font-medium">90-day program to design, build & launch</p></div>
+      </div>
+      <div class="flex items-start gap-4">
+        <div class="text-2xl">👥</div>
+        <div><p class="text-lg font-medium">Mentorship from 100+ CEOs and industry experts</p></div>
+      </div>
+      <div class="flex items-start gap-4">
+        <div class="text-2xl">💡</div>
+        <div><p class="text-lg font-medium">BYOB: Build Your Own Business challenge</p></div>
+      </div>
+      <div class="flex items-start gap-4">
+        <div class="text-2xl">📱</div>
+        <div><p class="text-lg font-medium">Real-world projects, not theory-based learning</p></div>
+      </div>
+      <div class="flex items-start gap-4">
+        <div class="text-2xl">⭐</div>
+        <div><p class="text-lg font-medium">Career Credit Score system with industry recognition</p></div>
+      </div>
+      <div class="flex items-start gap-4">
+        <div class="text-2xl">✅</div>
+        <div><p class="text-lg font-medium">110% placement assistance and seed funding access</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Rest of your sections below (continue as before) ... -->
-<!-- ... -->
+<!-- Course Card Section -->
+<section class="w-full bg-black py-16 md:py-20 px-4 md:px-12">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-white font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-16">
+      Learn <span class="italic text-green-400">'Practically'</span> by Building<br>Real Businesses
+    </h2>
+    <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl max-w-5xl mx-auto">
+      <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+        <div class="lg:w-[45%] w-full">
+          <div class="relative">
+            <img src="perpex-classroom.png" alt="PerpeX B-School Students" class="w-full object-cover rounded-2xl bg-gray-200" style="height: 14rem;" />
+          </div>
+        </div>
+        <div class="lg:w-[55%] w-full text-left">
+          <div class="inline-block bg-black text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            BYOB Challenge
+          </div>
+          <h3 class="text-black font-bold text-2xl md:text-3xl leading-tight mb-4">
+            Start your journey by building a<br><span class="italic">profitable startup business</span>
+          </h3>
+          <p class="text-gray-700 text-base md:text-lg mb-8 leading-relaxed">
+            Build a real business, master entrepreneurship, sales & digital marketing, and generate sustainable revenue in just 4 months
+          </p>
+          <a href="#" class="inline-flex items-center bg-gray-100 hover:bg-gray-200 text-black font-semibold py-3 px-6 rounded-lg transition border border-gray-300">
+            <span class="mr-2">📋</span>
+            <span>Download BYOB Program Guide</span>
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012-2 2H5a2 2 0 01-2-2z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- VIDEO SECTION (unchanged from your previous) -->
+<section class="w-full bg-gradient-to-br from-[#f5f6fa] via-[#ecf0f5] to-[#dee7fa] py-16 px-4">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+    <!-- Content Info -->
+    <div class="w-full md:w-2/5 flex flex-col items-center md:items-start text-center md:text-left order-1 md:order-none">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-[#142048] mb-4 tracking-tight">
+        <span class="block mb-1">🚀 See the Real Life at</span>
+        <span class="block text-[#2979FF]">PerpeX B-School!</span>
+      </h2>
+      <p class="text-gray-700 font-medium text-base md:text-lg mb-6">
+        Experience our entrepreneurial journey: vibrant community, hands-on projects, mentorship, <span class="whitespace-nowrap">and life-long learning!</span>
+      </p>
+      <ul class="flex space-x-2 justify-center md:justify-start mb-6">
+        <li><img src="logo1.jpg" class="w-9 h-9 rounded-full border-2 border-white shadow" alt="Mentor"/></li>
+        <li><img src="logo3.jpg" class="w-9 h-9 rounded-full border-2 border-white shadow" alt="Peer"/></li>
+        <li><img src="logo4.jpg" class="w-9 h-9 rounded-full border-2 border-white shadow" alt="Student Life"/></li>
+        <li><img src="logo5.jpg" class="w-9 h-9 rounded-full border-2 border-white shadow" alt="Peer"/></li>
+        <li class="flex items-center text-xs text-[#888] font-semibold ml-1">+ More</li>
+      </ul>
+      <button
+        class="flex items-center gap-2 px-6 py-3 rounded-full text-white font-semibold bg-[#2979FF] hover:bg-[#255ebb] shadow-lg transition"
+        id="perpex-video-btn"
+      >
+        <svg width="20" height="20" fill="currentColor"><path d="M6 4v12l10-6-10-6z"/></svg>
+        Hear Their Story
+      </button>
+    </div>
+    <!-- Video Portal Card -->
+    <div class="w-full md:w-3/5 flex flex-col items-center justify-center order-2">
+      <div class="relative rounded-2xl aspect-[9/16] max-w-xs w-full mx-auto overflow-hidden group shadow-2xl ring-2 ring-[#2979FF]/10 ring-offset-4 ring-offset-[#e4f0fe] mb-6 md:mb-0"
+          style="background: radial-gradient(ellipse at 70% 30%, #cfe0fe55 20%, transparent 70%);">
+        <!-- Placeholder/Player toggle -->
+        <div id="perpex-video-placeholder" class="relative w-full h-full cursor-pointer flex" onclick="togglePerpexVideo()">
+          <img src="lifeimg.png" alt="Life at PerpeX" class="w-full h-full object-cover"/>
+          <div class="absolute inset-0 bg-black bg-opacity-15 flex items-center justify-center">
+            <div class="bg-[#2979FF] hover:bg-[#1849ab] hover:scale-105 transition w-14 h-14 flex items-center justify-center rounded-full shadow-lg border-4 border-white"
+                  id="perpex-video-playicon">
+              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div id="perpex-video-container"
+             class="hidden absolute inset-0 z-10 w-full h-full bg-black bg-opacity-95 flex items-center justify-center">
+          <div class="relative w-full h-full flex flex-col">
+            <div class="flex-1 flex items-center justify-center">
+              <div id="perpex-yt-player-light" class="rounded-lg aspect-[9/16] w-full h-full"></div>
+            </div>
+            <button onclick="togglePerpexVideo()"
+                    class="absolute top-3 right-3 w-9 h-9 bg-black/70 hover:bg-[#2979FF] text-white rounded-full flex items-center justify-center z-20">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l6 6m0-6l-6 6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="text-xs text-[#2979FF] opacity-80 tracking-wide mt-2 md:mt-5">
+        “A sneak peek behind the scenes – community, action, and growth”
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+let perpexPlayer, perpexPlayerLoaded = false, perpexPlayerOpen = false;
+function openPlayerIfReady(action) {
+  if (perpexPlayerLoaded && perpexPlayer) {
+    if (action === "play") {
+      perpexPlayer.seekTo(0);
+      perpexPlayer.playVideo();
+    } else if (action === "pause") {
+      perpexPlayer.pauseVideo();
+    }
+  }
+}
+function togglePerpexVideo() {
+  const ph = document.getElementById('perpex-video-placeholder');
+  const vc = document.getElementById('perpex-video-container');
+  if (!perpexPlayerOpen) {
+    ph.style.display = "none";
+    vc.style.display = "flex";
+    vc.classList.remove('hidden');
+    openPlayerIfReady("play");
+    perpexPlayerOpen = true;
+  } else {
+    vc.style.display = "none";
+    vc.classList.add('hidden');
+    ph.style.display = "flex";
+    openPlayerIfReady("pause");
+    perpexPlayerOpen = false;
+  }
+}
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('perpex-video-btn').addEventListener('click', togglePerpexVideo);
+  document.getElementById('perpex-video-playicon').addEventListener('click', togglePerpexVideo);
+});
+function onYouTubeIframeAPIReady() {
+  perpexPlayer = new YT.Player('perpex-yt-player-light', {
+    width: "100%",
+    height: "100%",
+    videoId: 'jYZQDpfZReY',
+    playerVars: {
+      autoplay: 0, 
+      controls: 0,
+      modestbranding: 1,
+      rel: 0,
+      showinfo: 0,
+      fs: 0,
+      disablekb: 1,
+      iv_load_policy: 3,
+      playsinline: 1,
+      enablejsapi: 1
+    }
+  });
+  perpexPlayerLoaded = true;
+}
+</script>
+
+<!-- Expert Mentors Slider Section -->
+<section class="w-full bg-black py-16 md:py-20 px-4 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <h2 class="text-white font-bold text-2xl md:text-3xl lg:text-4xl mb-2">
+          Popular <span class="text-[#2979FF]">Expert</span> Sessions
+        </h2>
+      </div>
+      <div class="hidden md:flex items-center gap-3">
+        <button onclick="scrollSlider('left')" class="nav-button w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-white hover:border-[#2979FF] transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <button onclick="scrollSlider('right')" class="nav-button w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-white hover:border-[#2979FF] transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+      </div>
+    </div>
+    <div class="relative">
+      <div id="expert-slider" class="expert-slider flex gap-4 overflow-x-auto pb-4">
+        <div class="expert-card flex-none w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
+          <div class="relative h-80">
+            <img src="expert1.jpg" alt="The Power Playbook" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
+          </div>
+        </div>
+        <div class="expert-card flex-none w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
+          <div class="relative h-80">
+            <img src="expert22.png" alt="The Art of Intelligence" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
+          </div>
+        </div>
+        <div class="expert-card flex-none w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
+          <div class="relative h-80">
+            <img src="expert3.jpg" alt="The Science of Startup" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
+          </div>
+        </div>
+        <div class="expert-card flex-none w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
+          <div class="relative h-80">
+            <img src="expert4.jpg" alt="The Power of Mindset" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
+          </div>
+        </div>
+        <div class="expert-card flex-none w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
+          <div class="relative h-80">
+            <img src="expert6.jpg" alt="Funding Strategies" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
+          </div>
+        </div>
+        <div class="expert-card flex-none w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
+          <div class="relative h-80">
+            <img src="expert5.jpg" alt="Leadership Training" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
+          </div>
+        </div>
+        <div class="expert-card flex-none w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
+          <div class="relative h-80">
+            <img src="expert88.png" alt="The Power of Mindset" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function scrollSlider(direction) {
+  const slider = document.getElementById('expert-slider');
+  const cardWidth = 272;
+  const scrollAmount = direction === 'left' ? -cardWidth * 2 : cardWidth * 2;
+  slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+}
+</script>
 </body>
 </html>
