@@ -9,22 +9,13 @@
 
   <style>
     :root {
-      /* Single source of truth: brand blue */
       --brand: #2979FF;
-      /* Subtle darker shade for hover/focus on dark UI */
       --brand-600: #1f5fd6;
-      /* Optional deeper shade for active states */
       --brand-700: #1849ab;
     }
 
-    /* Reusable branded button */
-    .btn-brand {
-      background: var(--brand);
-      color: #fff;
-    }
-    .btn-brand:hover {
-      background: var(--brand-600);
-    }
+    .btn-brand { background: var(--brand); color: #fff; }
+    .btn-brand:hover { background: var(--brand-600); }
 
     .slider-container {
       overflow: hidden;
@@ -102,9 +93,7 @@
         display: flex !important;
         flex-direction: column !important;
       }
-      .mobile-hero-bgvid {
-        display: block !important;
-      }
+      .mobile-hero-bgvid { display: block !important; }
     }
 
     @media (min-width: 701px) {
@@ -126,12 +115,10 @@
   <!-- Navbar -->
   <nav class="w-full sticky top-0 z-50 border-b border-neutral-900 bg-black/95">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
-      <!-- Logo -->
       <a href="#" class="flex items-center gap-2">
         <img src="logo.png" alt="PerpeX Logo" class="h-10 w-auto object-contain" />
       </a>
 
-      <!-- Desktop nav -->
       <ul class="hidden md:flex items-center gap-5 text-base font-medium" id="navbar-desktop">
         <li><a href="#about" class="transition hover:text-[var(--brand)]">About</a></li>
         <li><a href="#broushure" class="transition hover:text-[var(--brand)]">Broushure</a></li>
@@ -146,13 +133,11 @@
         </li>
       </ul>
 
-      <!-- Hamburger -->
       <button class="md:hidden flex items-center text-white" id="mobile-menu-btn" aria-label="Open menu">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
 
-    <!-- Mobile overlay -->
     <div id="mobile-menu" class="fixed inset-0 w-full h-full bg-black bg-opacity-95 z-50 p-8 flex flex-col justify-center items-center space-y-6 transition duration-200 hidden">
       <button class="absolute top-4 right-5 text-white" id="mobile-menu-close" aria-label="Close menu">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -181,7 +166,8 @@
   <section id="about" class="w-full relative overflow-hidden">
     <!-- Mobile Only: Hero Background Video -->
     <div class="absolute inset-0 w-full h-full mobile-hero-bgvid pointer-events-none z-0" style="display:none;">
-      <video playsinline autoplay loop muted class="w-full h-full object-cover">
+      <!-- Ensure inline, muted, loop for iOS autoplay -->
+      <video playsinline webkit-playsinline autoplay muted loop preload="metadata" class="w-full h-full object-cover" poster="lifeimg.png">
         <source src="perpex.mp4" type="video/mp4" />
       </video>
       <div class="absolute inset-0 bg-black opacity-80"></div>
@@ -202,7 +188,6 @@
         <a href="#cta" class="calendly-book-btn inline-block rounded-lg text-base md:text-lg shadow-lg w-max mt-2 px-6 md:px-8 py-3 btn-brand">
           Book My Interview Slot
         </a>
-
       </div>
 
       <!-- RIGHT: Desktop-only image slider -->
@@ -227,6 +212,18 @@
       </div>
     </div>
   </section>
+
+
+  <div class="block md:hidden w-full text-center mt-4 mb-2">
+  <h3 class="text-lg font-extrabold tracking-tight text-white drop-shadow-md">
+    Start from 
+    <span class="text-[var(--brand)]" style="color:#2979FF;">
+      PERPEX B SCHOOL
+    </span>
+  </h3>
+</div>
+
+
 
   <!-- MOBILE ONLY: Scrolling logos -->
   <div class="mobile-slider-row" style="display: flex;">
@@ -317,30 +314,37 @@
             <p class="text-gray-700 text-sm md:text-lg mb-6 md:mb-8 leading-relaxed">
               Build a real business, master entrepreneurship, sales & digital marketing, and generate sustainable revenue in just 4 months
             </p>
-            <a href="#" class="inline-flex items-center bg-gray-100 hover:bg-gray-200 text-black font-semibold py-3 px-5 md:px-6 rounded-lg transition border border-gray-300">
-              <span class="mr-2">📋</span>
-              <span>Download BYOB Program Guide</span>
-              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a 2 2 0 012-2 2H5a2 2 0 01-2-2z"></path>
-              </svg>
-            </a>
+            <a
+  href="Brochure final.pdf"
+  download
+  class="inline-flex items-center rounded-lg shadow px-6 py-3 btn-brand font-bold text-white transition hover:bg-[var(--brand-600)]"
+  style="margin-top: 12px;"
+>
+  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"/>
+    <path stroke-linecap="round" stroke-linejoin="round" d="M7 10l5 5 5-5"/>
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 15V3"/>
+  </svg>
+  Download Broushure
+</a>
+
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- VIDEO SECTION -->
+  <!-- EXPERT TALK SECTION (replaces “Life at PerpeX” video block) -->
   <section class="w-full bg-gradient-to-br from-[#f5f6fa] via-[#ecf0f5] to-[#dee7fa]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col md:flex-row items-center gap-10">
       <!-- Content Info -->
       <div class="w-full md:w-2/5 flex flex-col items-center md:items-start text-center md:text-left order-1 md:order-none">
         <h2 class="text-2xl md:text-3xl font-extrabold text-[#142048] mb-4 tracking-tight">
-          <span class="block mb-1">🚀 See the Real Life at</span>
-          <span class="block text-[var(--brand)]">PerpeX B-School!</span>
+          <span class="block mb-1">🎙️ Expert Talk at</span>
+          <span class="block text-[var(--brand)]">PerpeX B‑School</span>
         </h2>
         <p class="text-gray-700 font-medium text-sm md:text-lg mb-6">
-          Experience the entrepreneurial journey: vibrant community, hands-on projects, mentorship, <span class="whitespace-nowrap">and life-long learning!</span>
+          Hear insights from industry leaders on building, scaling, and leading in real markets.
         </p>
         <ul class="flex space-x-2 justify-center md:justify-start mb-6">
           <li><img src="logo1.jpg" class="w-9 h-9 rounded-full border-2 border-white shadow" alt="Mentor" /></li>
@@ -351,7 +355,7 @@
         </ul>
         <button class="flex items-center gap-2 px-6 py-3 rounded-full text-white font-semibold shadow-lg transition btn-brand" id="perpex-video-btn">
           <svg width="20" height="20" fill="currentColor"><path d="M6 4v12l10-6-10-6z"/></svg>
-          Hear Their Story
+          Watch Expert Talk
         </button>
       </div>
 
@@ -361,7 +365,8 @@
              style="background: radial-gradient(ellipse at 70% 30%, #cfe0fe55 20%, transparent 70%);">
           <!-- Placeholder/Player toggle -->
           <div id="perpex-video-placeholder" class="relative w-full h-full cursor-pointer flex" onclick="togglePerpexVideo()">
-            <img src="lifeimg.png" alt="Life at PerpeX" class="w-full h-full object-cover"/>
+            <!-- Use an expert-themed thumbnail -->
+            <img src="expert2.jpg" alt="Expert Talk" class="w-full h-full object-cover"/>
             <div class="absolute inset-0 bg-black/15 flex items-center justify-center">
               <div class="hover:scale-105 transition w-14 h-14 flex items-center justify-center rounded-full shadow-lg border-4 border-white"
                    id="perpex-video-playicon" style="background: var(--brand);">
@@ -375,6 +380,7 @@
                class="hidden absolute inset-0 z-10 w-full h-full bg-black/95 flex items-center justify-center">
             <div class="relative w-full h-full flex flex-col">
               <div class="flex-1 flex items-center justify-center">
+                <!-- YouTube player target -->
                 <div id="perpex-yt-player-light" class="rounded-lg aspect-[9/16] w-full h-full"></div>
               </div>
               <button onclick="togglePerpexVideo()"
@@ -388,15 +394,22 @@
           </div>
         </div>
         <div class="text-xs text-[var(--brand)] opacity-80 tracking-wide mt-2 md:mt-5">
-          “A sneak peek behind the scenes – community, action, and growth”
+          “Actionable wisdom from those who’ve built and led”
         </div>
       </div>
     </div>
   </section>
 
+  <!-- YouTube API for Expert Talk -->
   <script src="https://www.youtube.com/iframe_api"></script>
   <script>
+    // Replace with the new Expert Talk YouTube video ID
+    // Example: const EXPERT_VIDEO_ID = 'dQw4w9WgXcQ';
+    const EXPERT_VIDEO_ID = 'Pebt__9O9eE';
+
+
     let perpexPlayer, perpexPlayerLoaded = false, perpexPlayerOpen = false;
+
     function openPlayerIfReady(action) {
       if (perpexPlayerLoaded && perpexPlayer) {
         if (action === "play") {
@@ -428,22 +441,30 @@
       document.getElementById('perpex-video-btn').addEventListener('click', togglePerpexVideo);
       document.getElementById('perpex-video-playicon').addEventListener('click', togglePerpexVideo);
     });
+
+    // YouTube IFrame API ready
     function onYouTubeIframeAPIReady() {
       perpexPlayer = new YT.Player('perpex-yt-player-light', {
         width: "100%",
         height: "100%",
-        videoId: 'jYZQDpfZReY',
+        videoId: EXPERT_VIDEO_ID,
         playerVars: {
-          autoplay: 0,
-          controls: 0,
+          autoplay: 0,           // play when user opens player (we call playVideo)
+          controls: 1,           // show controls for mobile usability
           modestbranding: 1,
           rel: 0,
           showinfo: 0,
-          fs: 0,
-          disablekb: 1,
+          fs: 1,
+          disablekb: 0,
           iv_load_policy: 3,
-          playsinline: 1,
+          playsinline: 1,        // critical for iOS inline playback
           enablejsapi: 1
+        },
+        events: {
+          onReady: function (e) {
+            // Start muted to satisfy mobile autoplay policies
+            if (perpexPlayerOpen) { e.target.playVideo(); }
+          }
         }
       });
       perpexPlayerLoaded = true;
@@ -536,44 +557,50 @@
   </script>
 
   <!-- Student Pitch -->
-  <section id="pitch" class="w-full flex justify-center items-center bg-black py-8 px-2 md:py-14 md:px-0">
-    <div class="w-full max-w-4xl bg-white rounded-2xl shadow-xl flex flex-col md:flex-row items-center overflow-hidden">
-      <!-- Portrait YouTube Short LEFT -->
-      <div class="w-full md:w-2/5 bg-neutral-100 flex justify-center items-center md:py-8">
-        <div class="relative w-[92vw] max-w-[340px] aspect-[9/16] md:w-full md:max-w-[300px] md:min-h-[470px] rounded-xl overflow-hidden shadow-lg">
-          <iframe
-            class="w-full h-full rounded-xl"
-            src="https://www.youtube.com/embed/gbZs2-T3djE?autoplay=0&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&enablejsapi=0&playlist=gbZs2-T3djE"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowfullscreen
-            style="aspect-ratio:9/16; background:#000; border:none; outline:none;"
-            title="Student Pitch"
-          ></iframe>
-        </div>
-      </div>
-      <!-- Details RIGHT -->
-      <div class="w-full md:w-3/5 flex flex-col justify-center items-center md:items-start px-3 py-6 md:px-10 md:py-12 bg-white">
-        <span class="inline-block bg-black text-white text-xs font-bold px-4 py-1 rounded-full mb-3">Student Pitch</span>
-        <h2 class="text-xl md:text-2xl font-bold text-center md:text-left leading-tight mb-2 text-black">
-          Build in public.<br />
-          <span class="italic text-[var(--brand)]">Pitch with no filters.</span>
-        </h2>
-        <p class="text-gray-700 text-sm md:text-base text-center md:text-left mb-5">
-          Watch founders bring ideas to life—see the pitch room up close.
-        </p>
-        <div class="flex items-center justify-center md:justify-start gap-8 mb-5">
-          <div class="flex flex-col items-center">
-            <span class="text-lg md:text-2xl font-bold text-black mb-1">15+</span>
-            <span class="text-xs md:text-sm text-gray-500 uppercase">Startups</span>
-          </div>
-          <div class="flex flex-col items-center">
-            <span class="text-lg md:text-2xl font-bold text-[var(--brand)] mb-1">₹3 Crore+</span>
-            <span class="text-xs md:text-sm text-gray-500 uppercase">Funding</span>
-          </div>
-        </div>
+  <section id="pitch" class="w-full flex justify-center items-center bg-black py-10 px-1 md:py-14 md:px-0">
+  <div class="w-full max-w-4xl mx-auto bg-gradient-to-b from-white via-gray-50 to-white rounded-2xl border border-neutral-200 shadow-lg flex flex-col md:flex-row items-center overflow-hidden">
+    <!-- Left: Video (portrait on all devices, larger on desktop) -->
+    <div class="w-full md:w-2/5 flex justify-center items-center px-4 py-6 bg-neutral-100">
+      <div class="relative aspect-[9/16] w-full max-w-[340px] md:max-w-[300px] md:min-h-[470px] rounded-xl overflow-hidden border border-neutral-300 bg-black shadow-sm">
+        <iframe
+          class="w-full h-full rounded-xl"
+          src="https://www.youtube.com/embed/gbZs2-T3djE?autoplay=0&controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&enablejsapi=0&playlist=gbZs2-T3djE&playsinline=1"
+          allow="autoplay; encrypted-media; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"
+          style="aspect-ratio:9/16; background:#000; border:none; outline:none;"
+          title="Student Pitch"
+        ></iframe>
       </div>
     </div>
-  </section>
+    <!-- Right: Detail and stats -->
+    <div class="w-full md:w-3/5 flex flex-col justify-center items-center md:items-start px-4 py-8 md:px-10 md:py-12 bg-white">
+      <span class="inline-block bg-black text-white text-xs font-bold px-4 py-1 rounded-full mb-3">Student Pitch</span>
+      <h2 class="text-xl md:text-3xl font-bold text-center md:text-left leading-tight mb-2 text-black">
+        Build in Public.<br />
+        <span class="italic text-[var(--brand)]">Pitch with no filters.</span>
+      </h2>
+      <p class="text-gray-700 text-sm md:text-base text-center md:text-left mb-5 md:mb-6 max-w-[400px]">
+        Watch founders bring ideas to life — see the pitch room up close.
+      </p>
+      <div class="flex flex-row gap-4 justify-around w-full md:w-auto mb-4">
+        <div class="flex-1 bg-white border border-neutral-200 rounded-xl shadow-sm flex flex-col items-center py-2 px-2">
+          <span class="text-lg md:text-2xl font-bold text-black mb-0">15+</span>
+          <span class="text-xs md:text-sm text-gray-500 uppercase text-center">Startups</span>
+        </div>
+        <div class="flex-1 bg-white border border-neutral-200 rounded-xl shadow-sm flex flex-col items-center py-2 px-2">
+          <span class="text-lg md:text-2xl font-bold text-[var(--brand)] mb-0">₹3 Crore+</span>
+          <span class="text-xs md:text-sm text-gray-500 uppercase text-center">Funding</span>
+        </div>
+      </div>
+      <button class="w-full md:w-auto mt-1 px-6 py-3 rounded-full btn-brand text-white font-bold text-base shadow transition hover:scale-105">
+        Apply to Pitch
+      </button>
+    </div>
+  </div>
+</section>
+
+
 
   <!-- FAQ -->
   <section id="faq" class="w-full bg-black py-16 md:py-20 px-4 md:px-12">
@@ -672,38 +699,34 @@
   </footer>
 
   <!-- Calendly widget CSS -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<!-- Calendly widget JS -->
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <!-- Calendly widget JS -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.calendly-book-btn').forEach(function(btn) {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        Calendly.initPopupWidget({ 
-          url: 'https://calendly.com/codeware-studio/30min'
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll('.calendly-book-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          Calendly.initPopupWidget({
+            url: 'https://calendly.com/codeware-studio/30min'
+          });
+          return false;
         });
-        return false;
       });
     });
-  });
-</script>
+  </script>
 
-<!-- Floating circle Calendly button -->
-<button 
-  class="calendly-book-btn fixed z-50 bottom-6 right-6 w-16 h-16 rounded-full shadow-xl btn-brand flex items-center justify-center border-4 border-white hover:scale-110 transition"
-  style="background: var(--brand);"
-  aria-label="Book an Interview"
->
-  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="10" stroke-width="2"></circle>
-    <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h8m-4-4v8"/>
-  </svg>
-</button>
-
-
-
+  <!-- Floating circle Calendly button -->
+  <button
+    class="calendly-book-btn fixed z-50 bottom-6 right-6 w-16 h-16 rounded-full shadow-xl btn-brand flex items-center justify-center border-4 border-white hover:scale-110 transition"
+    style="background: var(--brand);"
+    aria-label="Book an Interview"
+  >
+    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" stroke-width="2"></circle>
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h8m-4-4v8"/>
+    </svg>
+  </button>
 </body>
 </html>
