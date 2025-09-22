@@ -333,6 +333,197 @@
       </div>
     </div>
   </section>
+<section id="journey-timeline" class="block md:hidden w-full px-4 py-14 bg-gradient-to-b from-[#2979FF18] to-[#dee7fa10]">
+  <h2 class="text-2xl text-center font-extrabold text-[var(--brand)] mb-10 tracking-tight drop-shadow">
+    Startup Roadmap
+  </h2>
+  <div class="relative flex flex-col gap-11 max-w-lg mx-auto" style="padding-left:54px;">
+    <!-- Progress Bar -->
+    <div id="timeline-progress" class="absolute left-[16px] top-0 w-5 h-full z-[0] bg-gradient-to-b from-[#2979FF84] via-[#2979FFda] to-[#dee7fa10] rounded-full overflow-hidden">
+      <div id="progress-bar" class="absolute left-0 top-0 w-5 bg-[var(--brand)] rounded-full transition-all duration-400 z-[1]"></div>
+    </div>
+
+    <!-- Timeline Milestones -->
+    <div class="timeline-milestone timeline-card" id="m1">
+      <div class="flex items-center gap-4 mb-1">
+        <div class="timeline-badge bg-[#2979FF] text-white border-white">01</div>
+        <div class="timeline-title font-extrabold text-blue-900 text-lg">INCEPTION</div>
+      </div>
+      <div class="timeline-detail hidden mt-3 bg-white rounded-2xl p-5 shadow-2xl text-base font-medium text-gray-800">
+        <ul class="list-disc pl-3 space-y-1">
+          <li>Startup science and business basics</li>
+          <li>User persona and customer problems</li>
+          <li>Core value proposition and use cases</li>
+          <li>Validate market gaps</li>
+          <li>Idea mind mapping</li>
+          <li>Bootstrapping</li>
+          <li>Business knowledge</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-milestone timeline-card" id="m2">
+      <div class="flex items-center gap-4 mb-1">
+        <div class="timeline-badge bg-yellow-400 text-black border-white">02</div>
+        <div class="timeline-title font-extrabold text-blue-900 text-lg">REVELATION</div>
+      </div>
+      <div class="timeline-detail hidden mt-3 bg-white rounded-2xl p-5 shadow-2xl text-base font-medium text-gray-800">
+        <ul class="list-disc pl-3 space-y-1">
+          <li>Validate ideas & understand market need</li>
+          <li>User discovery interviews</li>
+          <li>Product designs</li>
+          <li>Lean startup & sales/marketing</li>
+          <li>MVP creation</li>
+          <li>Pivot decisions</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-milestone timeline-card" id="m3">
+      <div class="flex items-center gap-4 mb-1">
+        <div class="timeline-badge bg-cyan-400 text-black border-white">03</div>
+        <div class="timeline-title font-extrabold text-blue-900 text-lg">TRANSITION</div>
+      </div>
+      <div class="timeline-detail hidden mt-3 bg-white rounded-2xl p-5 shadow-2xl text-base font-medium text-gray-800">
+        <ul class="list-disc pl-3 space-y-1">
+          <li>Legal basics: GST, tax, legalities</li>
+          <li>Building your team</li>
+          <li>First revenue generation</li>
+          <li>Growth metrics</li>
+          <li>Workshops & bootcamps</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-milestone timeline-card" id="m4">
+      <div class="flex items-center gap-4 mb-1">
+        <div class="timeline-badge bg-green-400 text-black border-white">04</div>
+        <div class="timeline-title font-extrabold text-blue-900 text-lg">IMPLEMENTATION</div>
+      </div>
+      <div class="timeline-detail hidden mt-3 bg-white rounded-2xl p-5 shadow-2xl text-base font-medium text-gray-800">
+        <ul class="list-disc pl-3 space-y-1">
+          <li>Build product & investor pitch</li>
+          <li>User onboarding</li>
+          <li>Sales & marketing</li>
+          <li>Operations launch</li>
+          <li>Revenue simulation</li>
+          <li>Showcase Day</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-milestone timeline-card" id="m5">
+      <div class="flex items-center gap-4 mb-1">
+        <div class="timeline-badge bg-pink-400 text-black border-white">05</div>
+        <div class="timeline-title font-extrabold text-blue-900 text-lg flex items-center">REVOLUTION <span class="text-2xl ml-1 animate-bounce inline-block">🚀</span></div>
+      </div>
+      <div class="timeline-detail hidden mt-3 bg-white rounded-2xl p-5 shadow-2xl text-base font-medium text-gray-800">
+        <ul class="list-disc pl-3 space-y-1">
+          <li>Seed funding & business growth</li>
+          <li>Pitching to investors</li>
+          <li>Advanced fundraising</li>
+          <li>Going public</li>
+          <li>Growth hacking & strategy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <style>
+    .timeline-badge {
+      width: 48px; height: 48px; font-size: 1.3rem; font-weight:900; border-radius: 8px;
+      box-shadow: 0 8px 40px #2979FF28, 0 2px 8px #fff; border-width: 3px;
+      display:flex;align-items:center;justify-content:center;
+      letter-spacing:0.02em; transition: 
+        transform .36s cubic-bezier(.51,-0.56,.7,1.41),
+        box-shadow .38s cubic-bezier(.51,-0.56,.7,1.41);
+      will-change: transform, box-shadow;
+    }
+    .timeline-title,.timeline-badge {
+      transition: color .28s, text-shadow .28s, font-size .28s, opacity .28s, filter .36s, background .36s;
+    }
+    .timeline-card { opacity: .76; transition: box-shadow .36s, opacity .37s, filter .32s; }
+    .timeline-card.active { opacity: 1; filter: drop-shadow(0 7px 24px #2979FF44);}
+    .timeline-title.active {
+      color: #2979FF;
+      text-shadow: 0 4px 16px #2979FFa8;
+      font-size:1.34rem;
+      filter: brightness(1.07);
+    }
+    .timeline-badge.active {
+      transform: scale(1.18) rotate(-6deg);
+      box-shadow: 0 12px 30px #2979FF84, 0 4px 18px #fff;
+      border:2.5px solid #2979FF;
+      animation: badge-pop .7s cubic-bezier(.46,1.41,.46,1.31);
+      background: linear-gradient(120deg,#2979FF 40%,#dee7fa44 95%);
+    }
+    @keyframes badge-pop {
+      0% { transform: scale(.6) rotate(-12deg);}
+      70% { transform: scale(1.23) rotate(-12deg);}
+      100% { transform: scale(1.18) rotate(-6deg);}
+    }
+    .timeline-detail {
+      max-height:0; overflow:hidden; padding-bottom:0; opacity:.08; filter: blur(6px);
+      pointer-events:none; transition:max-height .39s,padding .28s,opacity .39s,filter .36s;
+    }
+    .timeline-card.active .timeline-detail {
+      max-height:410px; padding-bottom:16px; opacity:1; filter:none;
+      pointer-events:auto; animation: fadein-card .5s;
+    }
+    @keyframes fadein-card {
+      from {transform:scale(.93);opacity:.2;}
+      to {transform:scale(1);opacity:1;}
+    }
+    #progress-bar {
+      box-shadow: 0 8px 52px #2979FF88, 0 4px 18px #2979FFbb;
+      animation: barPulse 1.2s infinite alternate;
+      z-index: 2;
+      background: linear-gradient(180deg,#2979FF 60%,#dee7fa10 98%);
+    }
+    @keyframes barPulse {
+      0% { filter:blur(1px) brightness(1.08);}
+      100% { filter:blur(.5px) brightness(.88);}
+    }
+    @media (min-width: 768px) { #journey-timeline{display:none;} }
+  </style>
+  <script>
+    function updateTimeline() {
+      const milestones = document.querySelectorAll('.timeline-card');
+      let nearest = null, minDist = 99999, progress = 0, lastActiveIndex=0;
+      milestones.forEach((card, i) => {
+        let box = card.getBoundingClientRect(), y = box.top + box.height/2;
+        let dist = Math.abs(y-window.innerHeight/2);
+        if(dist < minDist) { minDist=dist; nearest=card; lastActiveIndex=i; }
+      });
+      milestones.forEach((card,i) => {
+        card.classList.remove('active');
+        card.querySelector('.timeline-title').classList.remove('active');
+        card.querySelector('.timeline-badge').classList.remove('active');
+        card.querySelector('.timeline-detail').classList.add('hidden');
+        if(card===nearest){
+          card.classList.add('active');
+          card.querySelector('.timeline-title').classList.add('active');
+          card.querySelector('.timeline-badge').classList.add('active');
+          card.querySelector('.timeline-detail').classList.remove('hidden');
+        }
+        if(i<=lastActiveIndex) progress=(i+1)/milestones.length;
+      });
+      // Progress bar height animation
+      var container = document.querySelector('#journey-timeline .relative');
+      var bar = document.getElementById('progress-bar');
+      var height = container.offsetHeight;
+      bar.style.height = (progress*height)+'px';
+    }
+    window.addEventListener('scroll', updateTimeline);
+    window.addEventListener('resize', updateTimeline);
+    document.querySelectorAll('.timeline-card').forEach((card) => {
+      card.addEventListener('click',()=>{
+        document.querySelectorAll('.timeline-card').forEach(card=>card.classList.remove('active'));
+        card.classList.add('active');
+        updateTimeline();
+        card.scrollIntoView({behavior:"smooth",block:"center"});
+      });
+    });
+    setTimeout(updateTimeline,360); // Initial update
+  </script>
+</section>
+
+  
 
   <!-- EXPERT TALK SECTION (replaces “Life at PerpeX” video block) -->
   <section class="w-full bg-gradient-to-br from-[#f5f6fa] via-[#ecf0f5] to-[#dee7fa]">
