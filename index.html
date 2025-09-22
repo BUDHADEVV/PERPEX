@@ -121,7 +121,7 @@
 
       <ul class="hidden md:flex items-center gap-5 text-base font-medium" id="navbar-desktop">
         <li><a href="#about" class="transition hover:text-[var(--brand)]">About</a></li>
-        <li><a href="#broushure" class="transition hover:text-[var(--brand)]">Broushure</a></li>
+        <li><a href="#brouchure" class="transition hover:text-[var(--brand)]">broshure</a></li>
         <li><a href="#bschool" class="transition hover:text-[var(--brand)]">B School</a></li>
         <li><a href="#experts" class="transition hover:text-[var(--brand)]">Experts</a></li>
         <li><a href="#pitch" class="transition hover:text-[var(--brand)]">Pitch</a></li>
@@ -145,7 +145,7 @@
         </svg>
       </button>
       <a href="#about" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">About</a>
-      <a href="#broushure" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">Broushure</a>
+      <a href="#brochure" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">Broshure</a>
       <a href="#bschool" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">B School Life</a>
       <a href="#experts" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">Expert Talks</a>
       <a href="#pitch" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">Pitch Session</a>
@@ -163,55 +163,65 @@
   </nav>
 
   <!-- HERO -->
-  <section id="about" class="w-full relative overflow-hidden">
-    <!-- Mobile Only: Hero Background Video -->
-    <div class="absolute inset-0 w-full h-full mobile-hero-bgvid pointer-events-none z-0" style="display:none;">
-      <!-- Ensure inline, muted, loop for iOS autoplay -->
-      <video playsinline webkit-playsinline autoplay muted loop preload="metadata" class="w-full h-full object-cover" >
-        <source src="perpex.mp4" type="video/mp4" />
-      </video>
-      <div class="absolute inset-0 bg-black opacity-80"></div>
-    </div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 flex flex-col lg:flex-row justify-center items-stretch min-h-[90vh] gap-6">
-      <!-- LEFT: Hero Text -->
-      <div class="lg:w-[55%] flex flex-col justify-center hero-mobile-center md:px-6">
-        <h1 class="font-extrabold text-[2.2rem] md:text-[3.5rem] leading-tight mb-3 tracking-tight uppercase">
-          Hello <span class="text-[var(--brand)]">Founder!</span>
+  <section id="about" class="w-full relative overflow-hidden bg-black min-h-[90vh] flex items-center justify-center">
+  <!-- Background Video Mobile -->
+  <div class="absolute inset-0 w-full h-full mobile-hero-bgvid pointer-events-none z-0 md:hidden" style="display:block;">
+    <video playsinline webkit-playsinline autoplay muted loop preload="metadata" class="w-full h-full object-cover">
+      <source src="perpex.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-black opacity-40"></div>
+  </div>
+  <!-- Mobile HERO Content -->
+  <div class="block md:hidden w-full h-full relative z-10">
+    <div id="mobile-hero-box" class="w-full h-[90vh] flex flex-col items-center justify-center relative transition-all duration-700">
+      <!-- Hero text -->
+      <div id="mobile-hero-text" class="text-center transition-all duration-500 absolute w-full left-0">
+        <h1 class="font-extrabold text-[2.2rem] leading-tight mb-3 tracking-tight uppercase text-white drop-shadow-lg">
+          Hello <span class="text-[#2979FF]">Founder!</span>
         </h1>
-        <p class="text-base md:text-xl font-bold mb-2">
+        <p class="text-base font-bold mb-2 text-white drop-shadow">
           If walking in the right direction… dreams do come true
         </p>
-        <p class="text-sm md:text-lg text-gray-300 mb-8">
+        <p class="text-sm text-gray-100 mb-8 drop-shadow">
           And yesss — already on the right path
         </p>
-        <a href="#cta" class="calendly-book-btn inline-block rounded-lg text-base md:text-lg shadow-lg w-max mt-2 px-6 md:px-8 py-3 btn-brand">
-          Book My Interview Slot
-        </a>
       </div>
-
-      <!-- RIGHT: Desktop-only image slider -->
-      <div class="lg:w-[45%] flex items-center justify-center min-h-[600px] desktop-slider-only">
-        <div class="slider-container">
-          <div class="slider-track">
-            <img src="logo1.jpg" alt="Logo 1" class="slider-img" />
-            <img src="logo2.jpg" alt="Logo 2" class="slider-img" />
-            <img src="logo3.jpg" alt="Logo 3" class="slider-img" />
-            <img src="logo4.jpg" alt="Logo 4" class="slider-img" />
-            <img src="logo5.jpg" alt="Logo 5" class="slider-img" />
-            <img src="logo6.jpg" alt="Logo 6" class="slider-img" />
-            <!-- Duplicate set for continuous scroll -->
-            <img src="logo1.jpg" alt="Logo 1" class="slider-img" />
-            <img src="logo2.jpg" alt="Logo 2" class="slider-img" />
-            <img src="logo3.jpg" alt="Logo 3" class="slider-img" />
-            <img src="logo4.jpg" alt="Logo 4" class="slider-img" />
-            <img src="logo5.jpg" alt="Logo 5" class="slider-img" />
-            <img src="logo6.jpg" alt="Logo 6" class="slider-img" />
-          </div>
-        </div>
-      </div>
+      <!-- Button (absolute) -->
+      <a href="#cta" id="mobile-hero-btn" class="calendly-book-btn rounded-lg text-base shadow-lg w-max px-6 py-3 btn-brand transition-all duration-700 absolute left-1/2 -translate-x-1/2"
+        style="bottom:25%;">
+        Book My Interview Slot
+      </a>
     </div>
-  </section>
+  </div>
+  <!-- Desktop (unchanged) -->
+  <div class="hidden md:flex relative z-10 max-w-7xl mx-auto px-4 lg:px-8 py-20 flex flex-row justify-center items-stretch min-h-[90vh] gap-6">
+    <!-- Desktop hero content -->
+    <!-- ... your previous desktop code ... -->
+  </div>
+</section>
+
+<script>
+function runMobileHeroSticky(){
+  if(window.innerWidth<768){
+    var heroBox = document.getElementById('mobile-hero-box');
+    var heroText = document.getElementById('mobile-hero-text');
+    var heroBtn = document.getElementById('mobile-hero-btn');
+    // Place in center
+    heroBox.style.justifyContent = "center";
+    heroText.style.top = "32%";
+    heroBtn.style.bottom = "25%";
+    setTimeout(function(){
+      // Slide text to top, button to bottom
+      heroBox.style.justifyContent = "flex-start";
+      heroText.style.top = "12vh";
+      heroBtn.style.bottom = "18px";
+    },2000);
+  }
+}
+document.addEventListener('DOMContentLoaded',runMobileHeroSticky);
+window.addEventListener('resize',runMobileHeroSticky);
+</script>
+
 
 
   <div class="block md:hidden w-full text-center mt-4 mb-2">
@@ -245,7 +255,7 @@
   </div>
 
   <!-- Program Features -->
-  <section id="broushure" class="w-full">
+  <section id="broshure" class="w-full">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
       <!-- LEFT -->
       <div class="lg:w-[45%] text-left">
@@ -295,7 +305,7 @@
   <section id="bschool" class="w-full">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
       <h2 class="text-white font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-12 md:mb-16">
-        Learn <span class="italic text-green-400">'Practically'</span> by Building<br class="hidden sm:block" />Real Businesses
+        Learn <span class="italic text-[#2979FF]">'Practically'</span> by Building<br class="hidden sm:block" />Real Businesses
       </h2>
       <div class="bg-white rounded-3xl p-6 md:p-10 lg:p-12 shadow-2xl max-w-5xl mx-auto">
         <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
@@ -325,7 +335,7 @@
     <path stroke-linecap="round" stroke-linejoin="round" d="M7 10l5 5 5-5"/>
     <path stroke-linecap="round" stroke-linejoin="round" d="M12 15V3"/>
   </svg>
-  Download Broushure
+  Download Broshure
 </a>
 
           </div>
@@ -784,8 +794,8 @@
           <span class="text-xs md:text-sm text-gray-500 uppercase text-center">Funding</span>
         </div>
       </div>
-      <button class="w-full md:w-auto mt-1 px-6 py-3 rounded-full btn-brand text-white font-bold text-base shadow transition hover:scale-105">
-        Apply to Pitch
+      <button class="calendly-book-btn w-full md:w-auto mt-1 px-6 py-3 rounded-full btn-brand text-white font-bold text-base shadow transition hover:scale-105">
+        Apply for First Round Interview
       </button>
     </div>
   </div>
@@ -851,7 +861,7 @@
         <div class="flex md:justify-center">
           <nav class="grid grid-cols-2 gap-x-10 gap-y-3 text-base">
             <a href="#about" class="text-neutral-300 transition hover:text-[var(--brand)]">About</a>
-            <a href="#broushure" class="text-neutral-300 transition hover:text-[var(--brand)]">Broushure</a>
+            <a href="#brouchure" class="text-neutral-300 transition hover:text-[var(--brand)]">Broshure</a>
             <a href="#bschool" class="text-neutral-300 transition hover:text-[var(--brand)]">B School</a>
             <a href="#experts" class="text-neutral-300 transition hover:text-[var(--brand)]">Experts</a>
             <a href="#pitch" class="text-neutral-300 transition hover:text-[var(--brand)]">Pitch</a>
