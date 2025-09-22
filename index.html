@@ -108,6 +108,10 @@
     .nav-button { transition: all .3s; }
     .nav-button:hover { background-color: rgba(41,121,255,0.1); }
 
+
+
+    
+
   </style>
 </head>
 <body class="bg-black text-white">
@@ -400,216 +404,249 @@ window.addEventListener('resize',runHeroInViewAnimation);
       </div>
     </div>
   </section>
-<section id="journey-timeline" class="block md:hidden w-full px-4 py-14 bg-gradient-to-b from-[#2979FF18] to-[#dee7fa10]">
-  <h2 class="text-2xl text-center font-extrabold text-[var(--brand)] mb-10 tracking-tight drop-shadow">
-    Startup Roadmap
-  </h2>
-  <div class="relative flex flex-col gap-11 max-w-lg mx-auto" style="padding-left:54px;">
-    <!-- Progress Bar -->
-    <div id="timeline-progress" class="absolute left-[16px] top-0 w-5 h-full z-[0] bg-gradient-to-b from-[#2979FF84] via-[#2979FFda] to-[#dee7fa10] rounded-full overflow-hidden">
-      <div id="progress-bar" class="absolute left-0 top-0 w-5 bg-[var(--brand)] rounded-full transition-all duration-400 z-[1]"></div>
-    </div>
 
-    <!-- Timeline Milestones -->
-    <div class="timeline-milestone timeline-card" id="m1">
-      <div class="flex items-center gap-4 mb-1">
-        <div class="timeline-badge bg-[#2979FF] text-white border-white">01</div>
-        <div class="timeline-title font-extrabold text-blue-900 text-lg">INCEPTION</div>
-      </div>
-      <div class="timeline-detail hidden mt-3 bg-white rounded-2xl p-5 shadow-2xl text-base font-medium text-gray-800">
-        <ul class="list-disc pl-3 space-y-1">
-          <li>Startup science and business basics</li>
-          <li>User persona and customer problems</li>
-          <li>Core value proposition and use cases</li>
-          <li>Validate market gaps</li>
-          <li>Idea mind mapping</li>
-          <li>Bootstrapping</li>
-          <li>Business knowledge</li>
-        </ul>
-      </div>
+  
+<!-- ======================= ROADMAP SECTION (MOBILE ONLY) - UPDATED ======================= -->
+<section id="journey-timeline" class="block md:hidden w-full px-4 py-20 bg-black">
+    <h2 class="text-2xl text-center font-extrabold text-[var(--brand)] mb-12 tracking-tight drop-shadow">
+        Startup Roadmap
+    </h2>
+    <div class="relative flex flex-col gap-11 max-w-lg mx-auto" style="padding-left:54px;">
+        <!-- Progress Bar -->
+        <div id="timeline-progress" class="absolute left-[16px] top-0 w-5 h-full z-[0] rounded-full overflow-hidden">
+            <div id="progress-bar" class="absolute left-0 top-0 w-5 rounded-full transition-all duration-400 z-[1]"></div>
+        </div>
+
+        <!-- Timeline Milestones -->
+        <div class="timeline-milestone timeline-card" id="m1">
+            <div class="flex items-center gap-4 mb-1">
+                <div class="timeline-badge">01</div>
+                <div class="timeline-title font-extrabold text-lg">INCEPTION</div>
+            </div>
+            <div class="timeline-detail hidden mt-3 rounded-2xl p-5 text-base font-medium">
+                <ul class="list-disc pl-3 space-y-1">
+                    <li>Startup science and business basics</li>
+                    <li>User persona and customer problems</li>
+                    <li>Core value proposition and use cases</li>
+                    <li>Validate market gaps</li>
+                    <li>Idea mind mapping</li>
+                    <li>Bootstrapping</li>
+                    <li>Business knowledge</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-milestone timeline-card" id="m2">
+            <div class="flex items-center gap-4 mb-1">
+                <div class="timeline-badge">02</div>
+                <div class="timeline-title font-extrabold text-lg">REVELATION</div>
+            </div>
+            <div class="timeline-detail hidden mt-3 rounded-2xl p-5 text-base font-medium">
+                <ul class="list-disc pl-3 space-y-1">
+                    <li>Validate ideas & understand market need</li>
+                    <li>User discovery interviews</li>
+                    <li>Product designs</li>
+                    <li>Lean startup & sales/marketing</li>
+                    <li>MVP creation</li>
+                    <li>Pivot decisions</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-milestone timeline-card" id="m3">
+            <div class="flex items-center gap-4 mb-1">
+                <div class="timeline-badge">03</div>
+                <div class="timeline-title font-extrabold text-lg">TRANSITION</div>
+            </div>
+            <div class="timeline-detail hidden mt-3 rounded-2xl p-5 text-base font-medium">
+                <ul class="list-disc pl-3 space-y-1">
+                    <li>Legal basics: GST, tax, legalities</li>
+                    <li>Building your team</li>
+                    <li>First revenue generation</li>
+                    <li>Growth metrics</li>
+                    <li>Workshops & bootcamps</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-milestone timeline-card" id="m4">
+            <div class="flex items-center gap-4 mb-1">
+                <div class="timeline-badge">04</div>
+                <div class="timeline-title font-extrabold text-lg">IMPLEMENTATION</div>
+            </div>
+            <div class="timeline-detail hidden mt-3 rounded-2xl p-5 text-base font-medium">
+                <ul class="list-disc pl-3 space-y-1">
+                    <li>Build product & investor pitch</li>
+                    <li>User onboarding</li>
+                    <li>Sales & marketing</li>
+                    <li>Operations launch</li>
+                    <li>Revenue simulation</li>
+                    <li>Showcase Day</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-milestone timeline-card" id="m5">
+            <div class="flex items-center gap-4 mb-1">
+                <div class="timeline-badge">05</div>
+                <div class="timeline-title font-extrabold text-lg flex items-center">REVOLUTION <span class="text-2xl ml-1 animate-bounce inline-block">🚀</span></div>
+            </div>
+            <div class="timeline-detail hidden mt-3 rounded-2xl p-5 text-base font-medium">
+                <ul class="list-disc pl-3 space-y-1">
+                    <li>Seed funding & business growth</li>
+                    <li>Pitching to investors</li>
+                    <li>Advanced fundraising</li>
+                    <li>Going public</li>
+                    <li>Growth hacking & strategy</li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="timeline-milestone timeline-card" id="m2">
-      <div class="flex items-center gap-4 mb-1">
-        <div class="timeline-badge bg-yellow-400 text-black border-white">02</div>
-        <div class="timeline-title font-extrabold text-blue-900 text-lg">REVELATION</div>
-      </div>
-      <div class="timeline-detail hidden mt-3 bg-white rounded-2xl p-5 shadow-2xl text-base font-medium text-gray-800">
-        <ul class="list-disc pl-3 space-y-1">
-          <li>Validate ideas & understand market need</li>
-          <li>User discovery interviews</li>
-          <li>Product designs</li>
-          <li>Lean startup & sales/marketing</li>
-          <li>MVP creation</li>
-          <li>Pivot decisions</li>
-        </ul>
-      </div>
-    </div>
-    <div class="timeline-milestone timeline-card" id="m3">
-      <div class="flex items-center gap-4 mb-1">
-        <div class="timeline-badge bg-cyan-400 text-black border-white">03</div>
-        <div class="timeline-title font-extrabold text-blue-900 text-lg">TRANSITION</div>
-      </div>
-      <div class="timeline-detail hidden mt-3 bg-white rounded-2xl p-5 shadow-2xl text-base font-medium text-gray-800">
-        <ul class="list-disc pl-3 space-y-1">
-          <li>Legal basics: GST, tax, legalities</li>
-          <li>Building your team</li>
-          <li>First revenue generation</li>
-          <li>Growth metrics</li>
-          <li>Workshops & bootcamps</li>
-        </ul>
-      </div>
-    </div>
-    <div class="timeline-milestone timeline-card" id="m4">
-      <div class="flex items-center gap-4 mb-1">
-        <div class="timeline-badge bg-green-400 text-black border-white">04</div>
-        <div class="timeline-title font-extrabold text-blue-900 text-lg">IMPLEMENTATION</div>
-      </div>
-      <div class="timeline-detail hidden mt-3 bg-white rounded-2xl p-5 shadow-2xl text-base font-medium text-gray-800">
-        <ul class="list-disc pl-3 space-y-1">
-          <li>Build product & investor pitch</li>
-          <li>User onboarding</li>
-          <li>Sales & marketing</li>
-          <li>Operations launch</li>
-          <li>Revenue simulation</li>
-          <li>Showcase Day</li>
-        </ul>
-      </div>
-    </div>
-    <div class="timeline-milestone timeline-card" id="m5">
-      <div class="flex items-center gap-4 mb-1">
-        <div class="timeline-badge bg-pink-400 text-black border-white">05</div>
-        <div class="timeline-title font-extrabold text-blue-900 text-lg flex items-center">REVOLUTION <span class="text-2xl ml-1 animate-bounce inline-block">🚀</span></div>
-      </div>
-      <div class="timeline-detail hidden mt-3 bg-white rounded-2xl p-5 shadow-2xl text-base font-medium text-gray-800">
-        <ul class="list-disc pl-3 space-y-1">
-          <li>Seed funding & business growth</li>
-          <li>Pitching to investors</li>
-          <li>Advanced fundraising</li>
-          <li>Going public</li>
-          <li>Growth hacking & strategy</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <style>
-    .timeline-badge {
-      width: 48px; height: 48px; font-size: 1.3rem; font-weight:900; border-radius: 8px;
-      box-shadow: 0 8px 40px #2979FF28, 0 2px 8px #fff; border-width: 3px;
-      display:flex;align-items:center;justify-content:center;
-      letter-spacing:0.02em; transition: 
-        transform .36s cubic-bezier(.51,-0.56,.7,1.41),
-        box-shadow .38s cubic-bezier(.51,-0.56,.7,1.41);
-      will-change: transform, box-shadow;
-    }
-    .timeline-title,.timeline-badge {
-      transition: color .28s, text-shadow .28s, font-size .28s, opacity .28s, filter .36s, background .36s;
-    }
-    .timeline-card { opacity: .76; transition: box-shadow .36s, opacity .37s, filter .32s; }
-    .timeline-card.active { opacity: 1; filter: drop-shadow(0 7px 24px #2979FF44);}
-    .timeline-title.active {
-      color: #2979FF;
-      text-shadow: 0 4px 16px #2979FFa8;
-      font-size:1.34rem;
-      filter: brightness(1.07);
-    }
-    .timeline-badge.active {
-      transform: scale(1.18) rotate(-6deg);
-      box-shadow: 0 12px 30px #2979FF84, 0 4px 18px #fff;
-      border:2.5px solid #2979FF;
-      animation: badge-pop .7s cubic-bezier(.46,1.41,.46,1.31);
-      background: linear-gradient(120deg,#2979FF 40%,#dee7fa44 95%);
-    }
-    @keyframes badge-pop {
-      0% { transform: scale(.6) rotate(-12deg);}
-      70% { transform: scale(1.23) rotate(-12deg);}
-      100% { transform: scale(1.18) rotate(-6deg);}
-    }
-    .timeline-detail {
-      max-height:0; overflow:hidden; padding-bottom:0; opacity:.08; filter: blur(6px);
-      pointer-events:none; transition:max-height .39s,padding .28s,opacity .39s,filter .36s;
-    }
-    .timeline-card.active .timeline-detail {
-      max-height:410px; padding-bottom:16px; opacity:1; filter:none;
-      pointer-events:auto; animation: fadein-card .5s;
-    }
-    @keyframes fadein-card {
-      from {transform:scale(.93);opacity:.2;}
-      to {transform:scale(1);opacity:1;}
-    }
-    #progress-bar {
-      box-shadow: 0 8px 52px #2979FF88, 0 4px 18px #2979FFbb;
-      animation: barPulse 1.2s infinite alternate;
-      z-index: 2;
-      background: linear-gradient(180deg,#2979FF 60%,#dee7fa10 98%);
-    }
-    @keyframes barPulse {
-      0% { filter:blur(1px) brightness(1.08);}
-      100% { filter:blur(.5px) brightness(.88);}
-    }
-    @media (min-width: 768px) { #journey-timeline{display:none;} }
-  </style>
-  <script>
-    function updateTimeline() {
-      const milestones = document.querySelectorAll('.timeline-card');
-      let nearest = null, minDist = 99999, progress = 0, lastActiveIndex=0;
-      milestones.forEach((card, i) => {
-        let box = card.getBoundingClientRect(), y = box.top + box.height/2;
-        let dist = Math.abs(y-window.innerHeight/2);
-        if(dist < minDist) { minDist=dist; nearest=card; lastActiveIndex=i; }
-      });
-      milestones.forEach((card,i) => {
-        card.classList.remove('active');
-        card.querySelector('.timeline-title').classList.remove('active');
-        card.querySelector('.timeline-badge').classList.remove('active');
-        card.querySelector('.timeline-detail').classList.add('hidden');
-        if(card===nearest){
-          card.classList.add('active');
-          card.querySelector('.timeline-title').classList.add('active');
-          card.querySelector('.timeline-badge').classList.add('active');
-          card.querySelector('.timeline-detail').classList.remove('hidden');
+    <style>
+        /* --- Dark Theme Roadmap Styles --- */
+        #timeline-progress { background: #27272a; /* zinc-800 */ }
+
+        .timeline-badge {
+            width: 48px; height: 48px; font-size: 1.3rem; font-weight:900; border-radius: 8px;
+            background-color: #3f3f46; /* zinc-700 */
+            color: #a1a1aa; /* zinc-400 */
+            border: 3px solid #52525b; /* zinc-600 */
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+            display:flex;align-items:center;justify-content:center;
+            letter-spacing:0.02em; transition:
+            transform .36s cubic-bezier(.51,-0.56,.7,1.41),
+            box-shadow .38s cubic-bezier(.51,-0.56,.7,1.41),
+            background-color .3s, border-color .3s, color .3s;
+            will-change: transform, box-shadow;
         }
-        if(i<=lastActiveIndex) progress=(i+1)/milestones.length;
-      });
-      // Progress bar height animation
-      var container = document.querySelector('#journey-timeline .relative');
-      var bar = document.getElementById('progress-bar');
-      var height = container.offsetHeight;
-      bar.style.height = (progress*height)+'px';
-    }
-    window.addEventListener('scroll', updateTimeline);
-    window.addEventListener('resize', updateTimeline);
-    document.querySelectorAll('.timeline-card').forEach((card) => {
-      card.addEventListener('click',()=>{
-        document.querySelectorAll('.timeline-card').forEach(card=>card.classList.remove('active'));
-        card.classList.add('active');
-        updateTimeline();
-        card.scrollIntoView({behavior:"smooth",block:"center"});
-      });
-    });
-    setTimeout(updateTimeline,360); // Initial update
-  </script>
+        .timeline-title {
+            color: #a1a1aa; /* zinc-400 */
+            transition: color .28s, text-shadow .28s, font-size .28s, opacity .28s, filter .36s;
+        }
+        .timeline-card { opacity: .7; transition: opacity .37s, filter .32s; }
+        .timeline-card.active { opacity: 1; filter: drop-shadow(0 0 20px #2979FF55);}
+
+        .timeline-title.active {
+            color: var(--brand);
+            text-shadow: 0 0 12px #2979FFa8;
+            font-size:1.34rem;
+            filter: brightness(1.1);
+        }
+
+        .timeline-badge.active {
+            transform: scale(1.18) rotate(-6deg);
+            box-shadow: 0 12px 30px #2979FF33, inset 0 1px 2px rgba(255,255,255,0.2);
+            border-color: var(--brand);
+            color: white;
+            animation: badge-pop .7s cubic-bezier(.46,1.41,.46,1.31);
+            background: linear-gradient(120deg, var(--brand) 40%, #1f5fd6 95%);
+        }
+        @keyframes badge-pop {
+            0% { transform: scale(.6) rotate(-12deg);}
+            70% { transform: scale(1.23) rotate(-12deg);}
+            100% { transform: scale(1.18) rotate(-6deg);}
+        }
+        .timeline-detail {
+            background-color: #18181b; /* zinc-900 */
+            color: #a1a1aa; /* zinc-400 */
+            border: 1px solid #3f3f46; /* zinc-700 */
+            max-height:0; overflow:hidden; padding-top:0; padding-bottom:0; opacity:.08; filter: blur(6px);
+            pointer-events:none; transition:max-height .39s, padding .28s, opacity .39s, filter .36s, border-color .3s, box-shadow .3s;
+        }
+        .timeline-card.active .timeline-detail {
+            max-height:410px; padding-top: 20px; padding-bottom:20px; opacity:1; filter:none;
+            pointer-events:auto; animation: fadein-card .5s;
+            border-color: #2979FF80;
+            box-shadow: 0 0 40px #2979FF1a;
+        }
+        @keyframes fadein-card {
+            from {transform:scale(.93) translateY(-10px); opacity:.2;}
+            to {transform:scale(1) translateY(0); opacity:1;}
+        }
+        #progress-bar {
+            background: var(--brand);
+            box-shadow: 0 0 10px var(--brand), 0 0 20px var(--brand), 0 0 30px var(--brand);
+            animation: barPulse 1.5s infinite alternate;
+            z-index: 2;
+        }
+        @keyframes barPulse {
+            from { filter: brightness(0.8); box-shadow: 0 0 8px var(--brand), 0 0 16px var(--brand); }
+            to { filter: brightness(1.2); box-shadow: 0 0 12px var(--brand), 0 0 24px var(--brand), 0 0 35px var(--brand); }
+        }
+        @media (min-width: 768px) { #journey-timeline{display:none;} }
+    </style>
+    <script>
+        function updateTimeline() {
+            const milestones = document.querySelectorAll('.timeline-card');
+            let nearest = null, minDist = 99999, progress = 0, lastActiveIndex = 0;
+            milestones.forEach((card, i) => {
+                let box = card.getBoundingClientRect(), y = box.top + box.height/2;
+                let dist = Math.abs(y-window.innerHeight/2);
+                if(dist < minDist) { minDist=dist; nearest=card; lastActiveIndex=i; }
+            });
+
+            milestones.forEach((card,i) => {
+                card.classList.remove('active');
+                card.querySelector('.timeline-title').classList.remove('active');
+                card.querySelector('.timeline-badge').classList.remove('active');
+                card.querySelector('.timeline-detail').classList.add('hidden');
+                if(card===nearest){
+                    card.classList.add('active');
+                    card.querySelector('.timeline-title').classList.add('active');
+                    card.querySelector('.timeline-badge').classList.add('active');
+                    card.querySelector('.timeline-detail').classList.remove('hidden');
+                }
+            });
+
+            // Calculate progress based on the last active card's position
+            if (nearest) {
+                // If the last milestone is the nearest one, set progress to 1 (100%)
+                if (lastActiveIndex === milestones.length - 1) {
+                    progress = 1;
+                } else {
+                    const containerTop = nearest.parentElement.getBoundingClientRect().top;
+                    const nearestTop = nearest.getBoundingClientRect().top;
+                    const nearestHeight = nearest.offsetHeight;
+                    const scrollPositionInContainer = (nearestTop - containerTop) + (nearestHeight / 2);
+                    progress = scrollPositionInContainer / nearest.parentElement.offsetHeight;
+                }
+            }
+            
+            // Progress bar height animation
+            var container = document.querySelector('#journey-timeline .relative');
+            var bar = document.getElementById('progress-bar');
+            var height = container.offsetHeight;
+            bar.style.height = (progress * height) + 'px';
+        }
+        window.addEventListener('scroll', updateTimeline);
+        window.addEventListener('resize', updateTimeline);
+        document.querySelectorAll('.timeline-card').forEach((card) => {
+            card.addEventListener('click',()=>{
+                card.scrollIntoView({behavior:"smooth",block:"center"});
+            });
+        });
+        setTimeout(updateTimeline,360); // Initial update
+    </script>
 </section>
+<!-- ======================= END OF ROADMAP SECTION ======================= -->
+  
 
   
 
   <!-- EXPERT TALK SECTION (replaces “Life at PerpeX” video block) -->
-  <section class="w-full bg-gradient-to-br from-[#f5f6fa] via-[#ecf0f5] to-[#dee7fa]">
+  <section class="w-full bg-black">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col md:flex-row items-center gap-10">
       <!-- Content Info -->
       <div class="w-full md:w-2/5 flex flex-col items-center md:items-start text-center md:text-left order-1 md:order-none">
-        <h2 class="text-2xl md:text-3xl font-extrabold text-[#142048] mb-4 tracking-tight">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-4 tracking-tight">
           <span class="block mb-1">🎙️ Expert Talk at</span>
           <span class="block text-[var(--brand)]">PerpeX B‑School</span>
         </h2>
-        <p class="text-gray-700 font-medium text-sm md:text-lg mb-6">
+        <p class="text-gray-300 font-medium text-sm md:text-lg mb-6">
           Hear insights from industry leaders on building, scaling, and leading in real markets.
         </p>
         <ul class="flex space-x-2 justify-center md:justify-start mb-6">
           <li><img src="logo1.jpg" class="w-9 h-9 rounded-full border-2 border-white shadow" alt="Mentor" /></li>
-          <li><img src="logo3.jpg" class="w-9 h-9 rounded-full border-2 border-white shadow" alt="Peer" /></li>
-          <li><img src="logo4.jpg" class="w-9 h-9 rounded-full border-2 border-white shadow" alt="Student Life" /></li>
+          <li><img src="logo2.jpg" class="w-9 h-9 rounded-full border-2 border-white shadow" alt="Peer" /></li>
+          <li><img src="logo3.jpg" class="w-9 h-9 rounded-full border-2 border-white shadow" alt="Student Life" /></li>
           <li><img src="logo5.jpg" class="w-9 h-9 rounded-full border-2 border-white shadow" alt="Peer" /></li>
-          <li class="flex items-center text-xs text-[#888] font-semibold ml-1">+ More</li>
+          <li class="flex items-center text-xs text-gray-400 font-semibold ml-1">+ More</li>
         </ul>
         <button class="flex items-center gap-2 px-6 py-3 rounded-full text-white font-semibold shadow-lg transition btn-brand" id="perpex-video-btn">
           <svg width="20" height="20" fill="currentColor"><path d="M6 4v12l10-6-10-6z"/></svg>
@@ -619,15 +656,14 @@ window.addEventListener('resize',runHeroInViewAnimation);
 
       <!-- Video Portal Card -->
       <div class="w-full md:w-3/5 flex flex-col items-center justify-center order-2">
-        <div class="relative rounded-2xl aspect-[9/16] max-w-xs w-full mx-auto overflow-hidden group shadow-2xl ring-2 ring-[var(--brand)]/10 ring-offset-4 ring-offset-[#e4f0fe] mb-6 md:mb-0"
-             style="background: radial-gradient(ellipse at 70% 30%, #cfe0fe55 20%, transparent 70%);">
+        <div class="relative rounded-2xl aspect-[9/16] max-w-xs w-full mx-auto overflow-hidden group shadow-2xl ring-2 ring-[var(--brand)]/10 ring-offset-4 ring-offset-black mb-6 md:mb-0">
           <!-- Placeholder/Player toggle -->
           <div id="perpex-video-placeholder" class="relative w-full h-full cursor-pointer flex" onclick="togglePerpexVideo()">
             <!-- Use an expert-themed thumbnail -->
             <img src="expert2.jpg" alt="Expert Talk" class="w-full h-full object-cover"/>
             <div class="absolute inset-0 bg-black/15 flex items-center justify-center">
               <div class="hover:scale-105 transition w-14 h-14 flex items-center justify-center rounded-full shadow-lg border-4 border-white"
-                   id="perpex-video-playicon" style="background: var(--brand);">
+                  id="perpex-video-playicon" style="background: var(--brand);">
                 <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z"/>
                 </svg>
@@ -635,15 +671,15 @@ window.addEventListener('resize',runHeroInViewAnimation);
             </div>
           </div>
           <div id="perpex-video-container"
-               class="hidden absolute inset-0 z-10 w-full h-full bg-black/95 flex items-center justify-center">
+              class="hidden absolute inset-0 z-10 w-full h-full bg-black/95 flex items-center justify-center">
             <div class="relative w-full h-full flex flex-col">
               <div class="flex-1 flex items-center justify-center">
                 <!-- YouTube player target -->
                 <div id="perpex-yt-player-light" class="rounded-lg aspect-[9/16] w-full h-full"></div>
               </div>
               <button onclick="togglePerpexVideo()"
-                      class="absolute top-3 right-3 w-9 h-9 text-white rounded-full flex items-center justify-center z-20"
-                      style="background: rgba(0,0,0,.7);">
+                  class="absolute top-3 right-3 w-9 h-9 text-white rounded-full flex items-center justify-center z-20"
+                  style="background: rgba(0,0,0,.7);">
                 <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l6 6m0-6l-6 6"/>
                 </svg>
@@ -707,15 +743,15 @@ window.addEventListener('resize',runHeroInViewAnimation);
         height: "100%",
         videoId: EXPERT_VIDEO_ID,
         playerVars: {
-          autoplay: 0,           // play when user opens player (we call playVideo)
-          controls: 1,           // show controls for mobile usability
+          autoplay: 0,          // play when user opens player (we call playVideo)
+          controls: 1,          // show controls for mobile usability
           modestbranding: 1,
           rel: 0,
           showinfo: 0,
           fs: 1,
           disablekb: 0,
           iv_load_policy: 3,
-          playsinline: 1,        // critical for iOS inline playback
+          playsinline: 1,       // critical for iOS inline playback
           enablejsapi: 1
         },
         events: {
@@ -738,7 +774,15 @@ window.addEventListener('resize',runHeroInViewAnimation);
             Popular <span class="text-[var(--brand)]">Expert</span> Sessions
           </h2>
         </div>
+        <div class=" block md:hidden">
+        
+          <svg class="w-5 h-5 ml-2 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+
         <div class="hidden md:flex items-center gap-3">
+          
           <button onclick="scrollSlider('left')" class="nav-button w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-white hover:border-[var(--brand)] transition" aria-label="Scroll left">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
           </button>
