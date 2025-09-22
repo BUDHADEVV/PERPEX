@@ -108,7 +108,6 @@
     .nav-button { transition: all .3s; }
     .nav-button:hover { background-color: rgba(41,121,255,0.1); }
 
-    .hidden { display: none !important; }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -121,7 +120,7 @@
 
       <ul class="hidden md:flex items-center gap-5 text-base font-medium" id="navbar-desktop">
         <li><a href="#about" class="transition hover:text-[var(--brand)]">About</a></li>
-        <li><a href="#brouchure" class="transition hover:text-[var(--brand)]">broshure</a></li>
+        <li><a href="#brouchure" class="transition hover:text-[var(--brand)]">Brochure</a></li>
         <li><a href="#bschool" class="transition hover:text-[var(--brand)]">B School</a></li>
         <li><a href="#experts" class="transition hover:text-[var(--brand)]">Experts</a></li>
         <li><a href="#pitch" class="transition hover:text-[var(--brand)]">Pitch</a></li>
@@ -145,7 +144,7 @@
         </svg>
       </button>
       <a href="#about" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">About</a>
-      <a href="#brochure" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">Broshure</a>
+      <a href="#brochure" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">Brochure</a>
       <a href="#bschool" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">B School Life</a>
       <a href="#experts" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">Expert Talks</a>
       <a href="#pitch" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">Pitch Session</a>
@@ -163,19 +162,22 @@
   </nav>
 
   <!-- HERO -->
+
+  
   <section id="about" class="w-full relative overflow-hidden bg-black min-h-[90vh] flex items-center justify-center">
-  <!-- Background Video Mobile -->
-  <div class="absolute inset-0 w-full h-full mobile-hero-bgvid pointer-events-none z-0 md:hidden" style="display:block;">
+  <!-- MOBILE: Background video and animated hero -->
+  <div class="absolute inset-0 w-full h-full mobile-hero-bgvid pointer-events-none z-0 md:hidden">
     <video playsinline webkit-playsinline autoplay muted loop preload="metadata" class="w-full h-full object-cover">
       <source src="perpex.mp4" type="video/mp4" />
     </video>
     <div class="absolute inset-0 bg-black opacity-40"></div>
   </div>
-  <!-- Mobile HERO Content -->
   <div class="block md:hidden w-full h-full relative z-10">
-    <div id="mobile-hero-box" class="w-full h-[90vh] flex flex-col items-center justify-center relative transition-all duration-700">
-      <!-- Hero text -->
-      <div id="mobile-hero-text" class="text-center transition-all duration-500 absolute w-full left-0">
+    <div id="mobile-hero-box"
+      class="w-full h-[90vh] flex flex-col items-center justify-center relative transition-all duration-700 opacity-0 pointer-events-none"
+      style="position:relative;">
+      <div id="mobile-hero-text"
+        class="text-center transition-all duration-500 absolute w-full left-0" style="opacity:0;">
         <h1 class="font-extrabold text-[2.2rem] leading-tight mb-3 tracking-tight uppercase text-white drop-shadow-lg">
           Hello <span class="text-[#2979FF]">Founder!</span>
         </h1>
@@ -186,40 +188,95 @@
           And yesss — already on the right path
         </p>
       </div>
-      <!-- Button (absolute) -->
-      <a href="#cta" id="mobile-hero-btn" class="calendly-book-btn rounded-lg text-base shadow-lg w-max px-6 py-3 btn-brand transition-all duration-700 absolute left-1/2 -translate-x-1/2"
-        style="bottom:25%;">
+      <a href="#cta" id="mobile-hero-btn"
+        class="calendly-book-btn rounded-lg text-base shadow-lg w-max px-6 py-3 btn-brand transition-all duration-700 absolute left-1/2 -translate-x-1/2"
+        style="bottom:25%;opacity:0;">
         Book My Interview Slot
       </a>
     </div>
   </div>
-  <!-- Desktop (unchanged) -->
-  <div class="hidden md:flex relative z-10 max-w-7xl mx-auto px-4 lg:px-8 py-20 flex flex-row justify-center items-stretch min-h-[90vh] gap-6">
-    <!-- Desktop hero content -->
-    <!-- ... your previous desktop code ... -->
+  <!-- DESKTOP HERO: content & image slider -->
+  <div class="hidden md:flex w-full relative z-10 max-w-7xl mx-auto px-4 lg:px-8 py-20 flex-row justify-center items-stretch min-h-[90vh] gap-6">
+    <!-- LEFT: Desktop Hero Text -->
+    <div class="lg:w-[55%] flex flex-col justify-center md:px-6">
+      <h1 class="font-extrabold text-[3.5rem] leading-tight mb-3 tracking-tight uppercase text-white">
+        Hello <span class="text-[#2979FF]">Founder!</span>
+      </h1>
+      <p class="text-xl font-bold mb-2 text-white">
+        If walking in the right direction… dreams do come true
+      </p>
+      <p class="text-lg text-gray-300 mb-8">
+        And yesss — already on the right path
+      </p>
+      <a href="#cta" class="calendly-book-btn inline-block rounded-lg text-lg shadow-lg w-max mt-2 px-8 py-4 btn-brand">
+        Book My Interview Slot
+      </a>
+    </div>
+    <!-- RIGHT: Desktop Image Slider -->
+    <div class="lg:w-[45%] flex items-center justify-center min-h-[600px]">
+      <div class="slider-container" style="height: 600px; width: 360px; border-radius: 1.1rem; overflow: hidden; position: relative;">
+        <div class="slider-track" style="display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; gap: 7px; animation: vertical-scroll 8s linear infinite;">
+          <img src="logo1.jpg" alt="Logo 1" class="slider-img" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; background: #18181b;" />
+          <img src="logo2.jpg" alt="Logo 2" class="slider-img" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; background: #18181b;" />
+          <img src="logo3.jpg" alt="Logo 3" class="slider-img" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; background: #18181b;" />
+          <img src="logo4.jpg" alt="Logo 4" class="slider-img" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; background: #18181b;" />
+          <img src="logo5.jpg" alt="Logo 5" class="slider-img" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; background: #18181b;" />
+          <img src="logo6.jpg" alt="Logo 6" class="slider-img" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; background: #18181b;" />
+          <!-- Duplicate set for continuous scroll -->
+          <img src="logo1.jpg" alt="Logo 1" class="slider-img" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; background: #18181b;" />
+          <img src="logo2.jpg" alt="Logo 2" class="slider-img" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; background: #18181b;" />
+          <img src="logo3.jpg" alt="Logo 3" class="slider-img" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; background: #18181b;" />
+          <img src="logo4.jpg" alt="Logo 4" class="slider-img" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; background: #18181b;" />
+          <img src="logo5.jpg" alt="Logo 5" class="slider-img" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; background: #18181b;" />
+          <img src="logo6.jpg" alt="Logo 6" class="slider-img" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; background: #18181b;" />
+        </div>
+      </div>
+    </div>
   </div>
 </section>
-
 <script>
-function runMobileHeroSticky(){
+function runHeroInViewAnimation() {
   if(window.innerWidth<768){
+    var heroSection = document.getElementById('about');
     var heroBox = document.getElementById('mobile-hero-box');
     var heroText = document.getElementById('mobile-hero-text');
     var heroBtn = document.getElementById('mobile-hero-btn');
-    // Place in center
-    heroBox.style.justifyContent = "center";
-    heroText.style.top = "32%";
-    heroBtn.style.bottom = "25%";
-    setTimeout(function(){
-      // Slide text to top, button to bottom
-      heroBox.style.justifyContent = "flex-start";
-      heroText.style.top = "12vh";
-      heroBtn.style.bottom = "18px";
-    },2000);
+    let animating=false;
+    function showAndAnimate(){
+      if(animating) return;
+      animating=true;
+      heroBox.style.opacity = "1"; heroBox.style.pointerEvents="auto";
+      heroText.style.opacity = "1"; heroText.style.top = "32%";
+      heroBtn.style.opacity = "1"; heroBtn.style.bottom = "25%";
+      heroBox.style.justifyContent="center";
+      setTimeout(function(){
+        heroBox.style.justifyContent="flex-start";
+        heroText.style.top = "12vh";
+        heroBtn.style.bottom = "12vh";
+      },2000);
+      setTimeout(()=>{animating=false;},2600);
+    }
+    function hideHero(){
+      heroBox.style.opacity = "0"; heroBox.style.pointerEvents="none";
+      heroText.style.opacity = "0"; heroBtn.style.opacity = "0";
+      heroBox.style.justifyContent="center";
+      heroText.style.top = "32%"; heroBtn.style.bottom="25%";
+      animating=false;
+    }
+    let observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          showAndAnimate();
+        } else {
+          hideHero();
+        }
+      });
+    }, {threshold:0.65});
+    observer.observe(heroSection);
   }
 }
-document.addEventListener('DOMContentLoaded',runMobileHeroSticky);
-window.addEventListener('resize',runMobileHeroSticky);
+document.addEventListener('DOMContentLoaded',runHeroInViewAnimation);
+window.addEventListener('resize',runHeroInViewAnimation);
 </script>
 
 
@@ -255,7 +312,7 @@ window.addEventListener('resize',runMobileHeroSticky);
   </div>
 
   <!-- Program Features -->
-  <section id="broshure" class="w-full">
+  <section id="Brochure" class="w-full">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
       <!-- LEFT -->
       <div class="lg:w-[45%] text-left">
@@ -335,7 +392,7 @@ window.addEventListener('resize',runMobileHeroSticky);
     <path stroke-linecap="round" stroke-linejoin="round" d="M7 10l5 5 5-5"/>
     <path stroke-linecap="round" stroke-linejoin="round" d="M12 15V3"/>
   </svg>
-  Download Broshure
+  Download Brochure
 </a>
 
           </div>
@@ -861,7 +918,7 @@ window.addEventListener('resize',runMobileHeroSticky);
         <div class="flex md:justify-center">
           <nav class="grid grid-cols-2 gap-x-10 gap-y-3 text-base">
             <a href="#about" class="text-neutral-300 transition hover:text-[var(--brand)]">About</a>
-            <a href="#brouchure" class="text-neutral-300 transition hover:text-[var(--brand)]">Broshure</a>
+            <a href="#brouchure" class="text-neutral-300 transition hover:text-[var(--brand)]">Brochure</a>
             <a href="#bschool" class="text-neutral-300 transition hover:text-[var(--brand)]">B School</a>
             <a href="#experts" class="text-neutral-300 transition hover:text-[var(--brand)]">Experts</a>
             <a href="#pitch" class="text-neutral-300 transition hover:text-[var(--brand)]">Pitch</a>
