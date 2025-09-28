@@ -305,6 +305,8 @@ window.addEventListener('resize',runHeroInViewAnimation);
       <img src="logo4.jpg" alt="Logo 4" class="slider-img" />
       <img src="logo5.jpg" alt="Logo 5" class="slider-img" />
       <img src="logo6.jpg" alt="Logo 6" class="slider-img" />
+      <img src="logo7.jpg" alt="Logo 6" class="slider-img" />
+      <img src="logo8.png" alt="Logo 6" class="slider-img" />
       <!-- Duplicate -->
       <img src="logo1.jpg" alt="Logo 1" class="slider-img" />
       <img src="logo2.jpg" alt="Logo 2" class="slider-img" />
@@ -312,6 +314,8 @@ window.addEventListener('resize',runHeroInViewAnimation);
       <img src="logo4.jpg" alt="Logo 4" class="slider-img" />
       <img src="logo5.jpg" alt="Logo 5" class="slider-img" />
       <img src="logo6.jpg" alt="Logo 6" class="slider-img" />
+      <img src="logo7.jpg" alt="Logo 7" class="slider-img" />
+      <img src="logo8.png" alt="Logo 8" class="slider-img" />
     </div>
   </div>
 
@@ -328,39 +332,40 @@ window.addEventListener('resize',runHeroInViewAnimation);
             Book Now
           </a>
           <a href="#" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-6 md:px-8 rounded-lg text-base md:text-lg hover:text-black hover:bg-white transition text-center flex items-center justify-center gap-2">
-            🎁 Watch Trailer
+            🎬 Watch Trailer
           </a>
         </div>
       </div>
       <!-- RIGHT -->
       <div class="lg:w-[55%] text-white space-y-6">
         <div class="flex items-start gap-4">
-          <div class="text-2xl">📚</div>
+          <div class="text-2xl">🚀</div>
           <div><p class="text-base md:text-lg font-medium">90-day program to design, build & launch</p></div>
         </div>
         <div class="flex items-start gap-4">
-          <div class="text-2xl">👥</div>
+          <div class="text-2xl">🎓</div>
           <div><p class="text-base md:text-lg font-medium">Mentorship from 100+ CEOs and industry experts</p></div>
         </div>
         <div class="flex items-start gap-4">
-          <div class="text-2xl">💡</div>
+          <div class="text-2xl">🏢</div>
           <div><p class="text-base md:text-lg font-medium">BYOB: Build Your Own Business challenge</p></div>
         </div>
         <div class="flex items-start gap-4">
-          <div class="text-2xl">📱</div>
+          <div class="text-2xl">⚙️</div>
           <div><p class="text-base md:text-lg font-medium">Real-world projects, not theory-based learning</p></div>
         </div>
         <div class="flex items-start gap-4">
-          <div class="text-2xl">⭐</div>
+          <div class="text-2xl">🏅</div>
           <div><p class="text-base md:text-lg font-medium">Career Credit Score system with industry recognition</p></div>
         </div>
         <div class="flex items-start gap-4">
-          <div class="text-2xl">✅</div>
+          <div class="text-2xl">🌱</div>
           <div><p class="text-base md:text-lg font-medium">110% placement assistance and seed funding access</p></div>
         </div>
       </div>
     </div>
-  </section>
+</section>
+
 
   <!-- Course Card -->
   <section id="bschool" class="w-full">
@@ -372,7 +377,7 @@ window.addEventListener('resize',runHeroInViewAnimation);
         <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           <div class="lg:w-[45%] w-full">
             <div class="relative">
-              <img src="perpex-classroom.png" alt="PerpeX B-School Students" class="w-full object-cover rounded-2xl bg-gray-200 h-56 md:h-60" />
+              <img src="students.jpg" alt="PerpeX B-School Students" class="w-full object-cover rounded-2xl bg-gray-200 h-56 md:h-60" />
             </div>
           </div>
           <div class="lg:w-[55%] w-full text-left">
@@ -408,9 +413,10 @@ window.addEventListener('resize',runHeroInViewAnimation);
   
 <!-- ======================= ROADMAP SECTION (MOBILE ONLY) - UPDATED ======================= -->
 <section id="journey-timeline" class="block md:hidden w-full px-4 py-20 bg-black">
-    <h2 class="text-2xl text-center font-extrabold text-[var(--brand)] mb-12 tracking-tight drop-shadow">
-        Startup Roadmap
-    </h2>
+    <h2 class="text-2xl text-center font-extrabold text-white mb-12 tracking-tight drop-shadow">
+    Your Journey to <span class="text-[var(--brand)]">PerpeX</span> Perpetual Excellence
+</h2>
+
     <div class="relative flex flex-col gap-11 max-w-lg mx-auto" style="padding-left:54px;">
         <!-- Progress Bar -->
         <div id="timeline-progress" class="absolute left-[16px] top-0 w-5 h-full z-[0] rounded-full overflow-hidden">
@@ -648,7 +654,7 @@ window.addEventListener('resize',runHeroInViewAnimation);
           <li><img src="logo5.jpg" class="w-9 h-9 rounded-full border-2 border-white shadow" alt="Peer" /></li>
           <li class="flex items-center text-xs text-gray-400 font-semibold ml-1">+ More</li>
         </ul>
-        <button class="flex items-center gap-2 px-6 py-3 rounded-full text-white font-semibold shadow-lg transition btn-brand" id="perpex-video-btn">
+        <button class="flex items-center gap-2 px-6 py-3 rounded-full text-white font-semibold shadow-lg transition btn-brand" id="perpex-video-btn" onclick="togglePerpexVideo()">
           <svg width="20" height="20" fill="currentColor"><path d="M6 4v12l10-6-10-6z"/></svg>
           Watch Expert Talk
         </button>
@@ -670,12 +676,21 @@ window.addEventListener('resize',runHeroInViewAnimation);
               </div>
             </div>
           </div>
-          <div id="perpex-video-container"
-              class="hidden absolute inset-0 z-10 w-full h-full bg-black/95 flex items-center justify-center">
+          
+          <!-- Vimeo Video Container -->
+          <div id="perpex-video-container" class="hidden absolute inset-0 z-10 w-full h-full bg-black/95 flex items-center justify-center">
             <div class="relative w-full h-full flex flex-col">
               <div class="flex-1 flex items-center justify-center">
-                <!-- YouTube player target -->
-                <div id="perpex-yt-player-light" class="rounded-lg aspect-[9/16] w-full h-full"></div>
+                <!-- Vimeo player -->
+                <iframe 
+                  id="perpex-vimeo-player" 
+                  class="rounded-lg aspect-[9/16] w-full h-full"
+                  src="https://player.vimeo.com/video/1122636889?autoplay=1&color=ffffff&title=0&byline=0&portrait=0&badge=0"
+                  frameborder="0" 
+                  allow="autoplay; fullscreen; picture-in-picture" 
+                  allowfullscreen
+                  title="Expert Talk"
+                ></iframe>
               </div>
               <button onclick="togglePerpexVideo()"
                   class="absolute top-3 right-3 w-9 h-9 text-white rounded-full flex items-center justify-center z-20"
@@ -688,11 +703,48 @@ window.addEventListener('resize',runHeroInViewAnimation);
           </div>
         </div>
         <div class="text-xs text-[var(--brand)] opacity-80 tracking-wide mt-2 md:mt-5">
-          “Actionable wisdom from those who’ve built and led”
+          "Actionable wisdom from those who've built and led"
         </div>
       </div>
     </div>
-  </section>
+</section>
+
+<script>
+function togglePerpexVideo() {
+  const placeholder = document.getElementById('perpex-video-placeholder');
+  const container = document.getElementById('perpex-video-container');
+  const iframe = document.getElementById('perpex-vimeo-player');
+  
+  if (placeholder.style.display === 'none') {
+    // Hide video, show placeholder
+    placeholder.style.display = 'flex';
+    container.classList.add('hidden');
+    
+    // Stop video by resetting iframe src
+    const currentSrc = iframe.src;
+    iframe.src = '';
+    setTimeout(() => {
+      iframe.src = currentSrc.replace('autoplay=1', 'autoplay=0');
+    }, 100);
+  } else {
+    // Show video, hide placeholder
+    placeholder.style.display = 'none';
+    container.classList.remove('hidden');
+    
+    // Ensure autoplay is enabled when showing video
+    if (!iframe.src.includes('autoplay=1')) {
+      iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1');
+    }
+  }
+}
+
+// Also make the "Watch Expert Talk" button work
+document.getElementById('perpex-video-btn').addEventListener('click', function(e) {
+  e.preventDefault();
+  togglePerpexVideo();
+});
+</script>
+
 
   <!-- YouTube API for Expert Talk -->
   <script src="https://www.youtube.com/iframe_api"></script>
@@ -804,6 +856,20 @@ window.addEventListener('resize',runHeroInViewAnimation);
 
           <div class="expert-card flex-none w-44 sm:w-56 md:w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
             <div class="relative h-64 sm:h-72 md:h-80">
+              <img src="ff.jpg" alt="The Power Playbook" class="w-full h-full object-cover" />
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
+            </div>
+          </div>
+
+          <div class="expert-card flex-none w-44 sm:w-56 md:w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
+            <div class="relative h-64 sm:h-72 md:h-80">
+              <img src="ff6.jpg" alt="The Power Playbook" class="w-full h-full object-cover" />
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
+            </div>
+          </div>
+
+          <div class="expert-card flex-none w-44 sm:w-56 md:w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
+            <div class="relative h-64 sm:h-72 md:h-80">
               <img src="expert22.png" alt="The Art of Intelligence" class="w-full h-full object-cover" />
               <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
             </div>
@@ -818,6 +884,14 @@ window.addEventListener('resize',runHeroInViewAnimation);
 
           <div class="expert-card flex-none w-44 sm:w-56 md:w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
             <div class="relative h-64 sm:h-72 md:h-80">
+              <img src="ff5.jpg" alt="The Power Playbook" class="w-full h-full object-cover" />
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
+            </div>
+          </div>
+
+
+          <div class="expert-card flex-none w-44 sm:w-56 md:w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
+            <div class="relative h-64 sm:h-72 md:h-80">
               <img src="expert4.jpg" alt="The Power of Mindset" class="w-full h-full object-cover" />
               <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
             </div>
@@ -829,6 +903,12 @@ window.addEventListener('resize',runHeroInViewAnimation);
               <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
             </div>
           </div>
+          <div class="expert-card flex-none w-44 sm:w-56 md:w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
+            <div class="relative h-64 sm:h-72 md:h-80">
+              <img src="ff3.jpg" alt="The Power Playbook" class="w-full h-full object-cover" />
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
+            </div>
+          </div>
 
           <div class="expert-card flex-none w-44 sm:w-56 md:w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
             <div class="relative h-64 sm:h-72 md:h-80">
@@ -836,10 +916,23 @@ window.addEventListener('resize',runHeroInViewAnimation);
               <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
             </div>
           </div>
-
           <div class="expert-card flex-none w-44 sm:w-56 md:w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
             <div class="relative h-64 sm:h-72 md:h-80">
-              <img src="expert88.png" alt="Strategic Growth" class="w-full h-full object-cover" />
+              <img src="ff4.jpg" alt="The Power Playbook" class="w-full h-full object-cover" />
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
+            </div>
+          </div>
+          <div class="expert-card flex-none w-44 sm:w-56 md:w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
+            <div class="relative h-64 sm:h-72 md:h-80">
+              <img src="ff3.jpg" alt="The Power Playbook" class="w-full h-full object-cover" />
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
+            </div>
+          </div>
+
+          
+          <div class="expert-card flex-none w-44 sm:w-56 md:w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
+            <div class="relative h-64 sm:h-72 md:h-80">
+              <img src="ff2.jpg" alt="Strategic Growth" class="w-full h-full object-cover" />
               <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
             </div>
           </div>
@@ -864,17 +957,38 @@ window.addEventListener('resize',runHeroInViewAnimation);
     <!-- Left: Video (portrait on all devices, larger on desktop) -->
     <div class="w-full md:w-2/5 flex justify-center items-center px-4 py-6 bg-neutral-100">
       <div class="relative aspect-[9/16] w-full max-w-[340px] md:max-w-[300px] md:min-h-[470px] rounded-xl overflow-hidden border border-neutral-300 bg-black shadow-sm">
+        <!-- Placeholder Image -->
+        <div id="videoPlaceholder" class="absolute inset-0 cursor-pointer group">
+          <img 
+            src="pitch.png" 
+            alt="Student Pitch Thumbnail" 
+            class="w-full h-full object-cover rounded-xl"
+            loading="lazy"
+          />
+          <!-- Play Button Overlay -->
+          <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 group-hover:bg-opacity-20 transition-all duration-300">
+            <div class="w-16 h-16 md:w-20 md:h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-6 h-6 md:w-8 md:h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        
+        <!-- YouTube Video (hidden initially) -->
         <iframe
-          class="w-full h-full rounded-xl"
-          src="https://www.youtube.com/embed/gbZs2-T3djE?autoplay=0&controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&enablejsapi=0&playlist=gbZs2-T3djE&playsinline=1"
+          id="videoIframe"
+          class="w-full h-full rounded-xl hidden"
+          src=""
+          data-src="https://www.youtube.com/embed/gbZs2-T3djE?autoplay=1&controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&enablejsapi=0&playlist=gbZs2-T3djE&playsinline=1"
           allow="autoplay; encrypted-media; picture-in-picture; web-share"
           allowfullscreen
-          loading="lazy"
           style="aspect-ratio:9/16; background:#000; border:none; outline:none;"
           title="Student Pitch"
         ></iframe>
       </div>
     </div>
+    
     <!-- Right: Detail and stats -->
     <div class="w-full md:w-3/5 flex flex-col justify-center items-center md:items-start px-4 py-8 md:px-10 md:py-12 bg-white">
       <span class="inline-block bg-black text-white text-xs font-bold px-4 py-1 rounded-full mb-3">Student Pitch</span>
@@ -901,6 +1015,25 @@ window.addEventListener('resize',runHeroInViewAnimation);
     </div>
   </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const placeholder = document.getElementById('videoPlaceholder');
+  const iframe = document.getElementById('videoIframe');
+  
+  if (placeholder && iframe) {
+    placeholder.addEventListener('click', function() {
+      // Hide placeholder
+      placeholder.style.display = 'none';
+      
+      // Show and load iframe
+      iframe.classList.remove('hidden');
+      iframe.src = iframe.getAttribute('data-src');
+    });
+  }
+});
+</script>
+
 
 
 
@@ -1011,7 +1144,7 @@ window.addEventListener('resize',runHeroInViewAnimation);
         btn.addEventListener('click', function(e) {
           e.preventDefault();
           Calendly.initPopupWidget({
-            url: 'https://calendly.com/codeware-studio/30min'
+            url: 'https://calendly.com/admissions-perpex/perpex-b-school-interview'
           });
           return false;
         });
