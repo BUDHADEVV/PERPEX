@@ -124,8 +124,8 @@
 
       <ul class="hidden md:flex items-center gap-5 text-base font-medium" id="navbar-desktop">
         <li><a href="#about" class="transition hover:text-[var(--brand)]">About</a></li>
-        <li><a href="#brouchure" class="transition hover:text-[var(--brand)]">Brochure</a></li>
         <li><a href="#bschool" class="transition hover:text-[var(--brand)]">B School</a></li>
+        <li><a href="#brochure" class="transition hover:text-[var(--brand)]">Brochure</a></li>
         <li><a href="#experts" class="transition hover:text-[var(--brand)]">Experts</a></li>
         <li><a href="#pitch" class="transition hover:text-[var(--brand)]">Pitch</a></li>
         <li><a href="#faq" class="transition hover:text-[var(--brand)]">FAQs</a></li>
@@ -148,8 +148,9 @@
         </svg>
       </button>
       <a href="#about" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">About</a>
+      <a href="#bschool" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">B School </a>
       <a href="#brochure" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">Brochure</a>
-      <a href="#bschool" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">B School Life</a>
+  
       <a href="#experts" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">Expert Talks</a>
       <a href="#pitch" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">Pitch Session</a>
       <a href="#faq" class="text-lg font-semibold transition hover:text-[var(--brand)]" onclick="closeMobileMenu()">FAQs</a>
@@ -320,7 +321,7 @@ window.addEventListener('resize',runHeroInViewAnimation);
   </div>
 
   <!-- Program Features -->
-  <section id="Brochure" class="w-full">
+  <section id="bschool" class="w-full">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
       <!-- LEFT -->
       <div class="lg:w-[45%] text-left">
@@ -368,7 +369,7 @@ window.addEventListener('resize',runHeroInViewAnimation);
 
 
   <!-- Course Card -->
-  <section id="bschool" class="w-full">
+  <section id="brochure" class="w-full">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
       <h2 class="text-white font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-12 md:mb-16">
         Learn <span class="italic text-[#2979FF]">'Practically'</span> by Building<br class="hidden sm:block" />Real Businesses
@@ -631,6 +632,130 @@ window.addEventListener('resize',runHeroInViewAnimation);
     </script>
 </section>
 <!-- ======================= END OF ROADMAP SECTION ======================= -->
+
+
+  <<section id="journey-timeline-desktop" class="hidden md:block w-full px-0 py-20 bg-black">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl lg:text-5xl font-extrabold text-white text-center mb-14 tracking-tight drop-shadow">
+      Your Journey to <span class="text-[var(--brand)]">PerpeX</span> Perpetual Excellence
+    </h2>
+    <div class="relative flex flex-row items-center justify-center gap-0 mb-6">
+      <!-- Connectors and badges -->
+      <div class="flex w-full items-center justify-between px-4">
+        <div class="flex flex-row items-center w-full gap-0">
+          <div id="milestone-1" class="milestone-badge w-14 h-14 rounded-full bg-zinc-900 border-2 border-[var(--brand)] flex items-center justify-center text-white text-lg font-bold shadow cursor-pointer active-milestone">1</div>
+          <div class="flex-1 h-1 bg-gradient-to-r from-[var(--brand)] via-blue-400 to-[var(--brand)]"></div>
+          <div id="milestone-2" class="milestone-badge w-14 h-14 rounded-full bg-zinc-900 border-2 border-[var(--brand)] flex items-center justify-center text-white text-lg font-bold shadow cursor-pointer">2</div>
+          <div class="flex-1 h-1 bg-gradient-to-r from-[var(--brand)] via-blue-400 to-[var(--brand)]"></div>
+          <div id="milestone-3" class="milestone-badge w-14 h-14 rounded-full bg-zinc-900 border-2 border-[var(--brand)] flex items-center justify-center text-white text-lg font-bold shadow cursor-pointer">3</div>
+          <div class="flex-1 h-1 bg-gradient-to-r from-[var(--brand)] via-blue-400 to-[var(--brand)]"></div>
+          <div id="milestone-4" class="milestone-badge w-14 h-14 rounded-full bg-zinc-900 border-2 border-[var(--brand)] flex items-center justify-center text-white text-lg font-bold shadow cursor-pointer">4</div>
+          <div class="flex-1 h-1 bg-gradient-to-r from-[var(--brand)] via-blue-400 to-[var(--brand)]"></div>
+          <div id="milestone-5" class="milestone-badge w-14 h-14 rounded-full bg-[var(--brand)] border-2 border-[var(--brand)] flex items-center justify-center text-white text-lg font-bold shadow cursor-pointer">5</div>
+        </div>
+      </div>
+    </div>
+    <div id="timeline-card-content" class="mt-8 transition-all duration-300">
+      <!-- Card content appears here -->
+      <div class="timeline-card px-8 py-7 rounded-xl bg-zinc-900 border border-[var(--brand)] shadow-lg">
+        <h3 class="text-lg font-bold text-white mb-3">INCEPTION</h3>
+        <ul class="list-disc list-inside space-y-2">
+          <li class="text-white font-bold">Startup science & business basics</li>
+          <li class="text-white font-bold">User persona, customer problems</li>
+          <li class="text-white font-bold">Core value proposition & use cases</li>
+          <li class="text-white font-bold">Validate market gaps, idea mapping</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <style>
+    .milestone-badge.active-milestone {
+      border-width: 3px;
+      border-color: var(--brand);
+      background: #2979FF22;
+      font-weight: 900;
+      box-shadow: 0 0 0 4px var(--brand);
+      transition: all .2s;
+    }
+    .milestone-badge { transition: all .18s; }
+    .milestone-badge:hover, .milestone-badge:focus {
+      border-width: 3px;
+      background: #2979FF33;
+    }
+    .timeline-card { opacity:1; transition:opacity .3s;}
+  </style>
+  <script>
+    // Timeline content
+    const milestones = [
+      {
+        title: "INCEPTION",
+        content: [
+          "Startup science & business basics",
+          "User persona, customer problems",
+          "Core value proposition & use cases",
+          "Validate market gaps, idea mapping"
+        ]
+      },
+      {
+        title: "REVELATION",
+        content: [
+          "Validate ideas, market need",
+          "User interviews, product designs",
+          "Lean startup, sales & marketing",
+          "MVP creation, pivot decisions"
+        ]
+      },
+      {
+        title: "TRANSITION",
+        content: [
+          "Legal basics, GST/tax",
+          "Build your team, first revenue",
+          "Growth metrics, workshops"
+        ]
+      },
+      {
+        title: "IMPLEMENTATION",
+        content: [
+          "Build product, investor pitch",
+          "User onboarding, sales",
+          "Operations & launch",
+          "Revenue simulation, Showcase Day"
+        ]
+      },
+      {
+        title: "REVOLUTION",
+        content: [
+          "Seed funding & business growth",
+          "Pitch to investors, fundraising",
+          "Going public & growth hacking"
+        ]
+      }
+    ];
+    const badges = Array.from(document.querySelectorAll('.milestone-badge'));
+    const card = document.getElementById('timeline-card-content');
+    function setActive(idx) {
+      badges.forEach((b, i) => b.classList.toggle('active-milestone', i===idx));
+      card.style.opacity = '0.7';
+      setTimeout(() => {
+        card.innerHTML = `<div class="timeline-card px-8 py-7 rounded-xl bg-zinc-900 border border-[var(--brand)] shadow-lg">
+          <h3 class="text-lg font-bold text-white mb-3">${milestones[idx].title}</h3>
+          <ul class="list-disc list-inside space-y-2">
+            ${milestones[idx].content.map(x=>`<li class='text-white font-bold'>${x}</li>`).join('')}
+          </ul>
+        </div>`;
+        card.style.opacity = '1';
+      }, 130);
+    }
+    badges.forEach((badge,i)=>{
+      badge.addEventListener('mouseenter', ()=>setActive(i));
+      badge.addEventListener('focus', ()=>setActive(i));
+    });
+    setActive(0); // Default active
+  </script>
+</section>
+
+
+
   
 
   
@@ -878,7 +1003,7 @@ document.getElementById('perpex-video-btn').addEventListener('click', function(e
         <!-- Card 3 -->
         <div class="expert-card flex-none w-44 sm:w-56 md:w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
           <div class="relative h-64 sm:h-72 md:h-80">
-            <a href="https://www.instagram.com/reel/DL7QoI3TtPs/?igsh=X2U5WWsyOUxE" target="_blank" rel="noopener">
+            <a href="https://www.instagram.com/p/DNHrW6lzP0Y/" target="_blank" rel="noopener">
               <img src="ff6.jpg" alt="The Power Playbook" class="w-full h-full object-cover" />
               <span class="absolute top-2 right-2 bg-black/70 rounded-full p-1 z-10 flex items-center justify-center">
                 <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
@@ -972,21 +1097,7 @@ document.getElementById('perpex-video-btn').addEventListener('click', function(e
           </div>
         </div>
         <!-- Card 9 -->
-        <div class="expert-card flex-none w-44 sm:w-56 md:w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
-          <div class="relative h-64 sm:h-72 md:h-80">
-            <a href="https://instagram.com/reel/REEL9" target="_blank" rel="noopener">
-              <img src="ff3.jpg" alt="The Power Playbook" class="w-full h-full object-cover"/>
-              <span class="absolute top-2 right-2 bg-black/70 rounded-full p-1 z-10 flex items-center justify-center">
-                <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
-                  <rect width="18" height="18" x="3" y="3" rx="5" fill="none" stroke="#fff" stroke-width="2"/>
-                  <circle cx="12" cy="12" r="5" fill="none" stroke="#fff" stroke-width="2"/>
-                  <circle cx="17" cy="7" r="1.25" fill="#fff"/>
-                </svg>
-              </span>
-            </a>
-            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent"></div>
-          </div>
-        </div>
+        
         <!-- Card 10 -->
         <div class="expert-card flex-none w-44 sm:w-56 md:w-64 bg-gradient-to-b from-gray-900 to-black rounded-2xl overflow-hidden relative group cursor-pointer">
           <div class="relative h-64 sm:h-72 md:h-80">
@@ -1211,7 +1322,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="flex md:justify-center">
           <nav class="grid grid-cols-2 gap-x-10 gap-y-3 text-base">
             <a href="#about" class="text-neutral-300 transition hover:text-[var(--brand)]">About</a>
-            <a href="#brouchure" class="text-neutral-300 transition hover:text-[var(--brand)]">Brochure</a>
+            <a href="#brochure" class="text-neutral-300 transition hover:text-[var(--brand)]">Brochure</a>
             <a href="#bschool" class="text-neutral-300 transition hover:text-[var(--brand)]">B School</a>
             <a href="#experts" class="text-neutral-300 transition hover:text-[var(--brand)]">Experts</a>
             <a href="#pitch" class="text-neutral-300 transition hover:text-[var(--brand)]">Pitch</a>
