@@ -1401,5 +1401,79 @@ document.addEventListener('DOMContentLoaded', function() {
       <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h8m-4-4v8"/>
     </svg>
   </button>
+
+  <script>
+    // TRACK TIME SPENT IN EACH SECTION BY ID
+    const SECTION_IDS = [
+      'about',        // Hero
+      'bschool',      // Program Features
+      'brochure',     // Brochure / Downloads
+      'journey-timeline', // Roadmap (Mobile)
+      'journey-timeline-desktop', // Roadmap (Desktop)
+      'experts',      // Experts / Mentors
+      'pitch',        // Student Pitch
+      'faq',          // FAQ
+      'cta'           // Final CTA
+    ];
+
+    const sectionTimers = {};
+    const sectionVisible = {};
+
+    function trackSectionTime(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (!section) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            sectionVisible[sectionId] = Date.now();
+          } else if (sectionVisible[sectionId]) {
+            const timeSpent = Math.round((Date.now() - sectionVisible[sectionId]) / 1000); // seconds
+            gtag('event', 'section_time', {
+              section: sectionId,
+              time_spent: timeSpent
+            });
+            sectionVisible[sectionId] = null;
+          }
+        });
+      }, { threshold: 0.5 });
+
+      observer.observe(section);
+    }
+
+    SECTION_IDS.forEach(trackSectionTime);
+
+    // TRACK CLICKS ON ALL BUTTONS AND LINKS
+    document.addEventListener('click', function (e) {
+      let el = e.target;
+
+      // Find if clicked item is or is inside a button, or <a>
+      while (el && !(el.tagName === 'A' || el.tagName === 'BUTTON')) {
+        el = el.parentElement;
+      }
+      if (!el) return;
+
+      let type = el.tagName === 'A' ? 'link' : 'button';
+      let text = el.innerText || el.getAttribute('aria-label') || '';
+      let href = el.tagName === 'A' ? el.getAttribute('href') : '';
+
+      gtag('event', 'user_click', {
+        click_type: type,
+        section: findSection(el),
+        text: text.trim().substring(0, 50), // limit text size
+        href: href
+      });
+    });
+
+    function findSection(el) {
+      // Traverse DOM upwards, returns the first section id from SECTION_IDS
+      while (el && el !== document.body) {
+        if (el.id && SECTION_IDS.includes(el.id)) return el.id;
+        el = el.parentElement;
+      }
+      return 'unknown';
+    }
+  </script>
+
 </body>
 </html>
