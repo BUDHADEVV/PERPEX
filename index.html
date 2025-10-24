@@ -1371,36 +1371,9 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </footer>
 
-  <!-- Calendly widget CSS -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <!-- Calendly widget JS -->
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+ 
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      document.querySelectorAll('.calendly-book-btn').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          Calendly.initPopupWidget({
-            url: 'https://calendly.com/admissions-perpex/perpex-b-school-interview'
-          });
-          return false;
-        });
-      });
-    });
-  </script>
 
-  <!-- Floating circle Calendly button -->
-  <button
-    class="calendly-book-btn fixed z-50 bottom-6 right-6 w-16 h-16 rounded-full shadow-xl btn-brand flex items-center justify-center border-4 border-white hover:scale-110 transition"
-    style="background: var(--brand);"
-    aria-label="Book an Interview"
-  >
-    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10" stroke-width="2"></circle>
-      <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h8m-4-4v8"/>
-    </svg>
-  </button>
 
   <script>
     // TRACK TIME SPENT IN EACH SECTION BY ID
@@ -1474,6 +1447,91 @@ document.addEventListener('DOMContentLoaded', function() {
       return 'unknown';
     }
   </script>
+
+
+<!-- Booking Popup Form -->
+<div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-2xl p-6 w-full max-w-md shadow-xl text-black relative">
+    <button id="close-modal" class="absolute top-3 right-3 text-xl font-bold text-gray-700 hover:text-red-600">&times;</button>
+    <h2 class="text-xl font-bold mb-4 text-2979FF">Book Your Interview Slot</h2>
+    <form id="booking-form" class="space-y-4">
+      <input name="name" type="text" placeholder="Name" required class="w-full px-4 py-2 border rounded-lg focus:outline-2979FF"/>
+      <input name="age" type="number" placeholder="Age" required class="w-full px-4 py-2 border rounded-lg focus:outline-2979FF"/>
+      <input name="phone" type="tel" placeholder="Phone Number" required class="w-full px-4 py-2 border rounded-lg focus:outline-2979FF"/>
+      <input name="email" type="email" placeholder="Email" required class="w-full px-4 py-2 border rounded-lg focus:outline-2979FF"/>
+
+      <select name="program" required class="w-full px-4 py-2 border rounded-lg focus:outline-2979FF">
+        <option value="" disabled selected>Select a program</option>
+        <option>Practical HR Management</option>
+        <option>BYOB - Build Your Own Business</option>
+        <option>Practical Sales Course</option>
+        <option>Startup Launch Pad Program</option>
+        <option>B2B - Sales Training</option>
+        <option>B2B - Staffing</option>
+        <option>B2B - Documentation</option>
+        <option>B2B Custom Service</option>
+      </select>
+
+      <button type="submit" class="btn-brand w-full py-2 rounded-lg font-bold text-white hover:bg-1f5fd6 transition">Submit</button>
+      <div id="form-status" class="mt-2 text-center text-sm"></div>
+    </form>
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  // Open modal on booking button
+  document.querySelectorAll('.calendly-book-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('booking-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  // Close modal
+  document.getElementById('close-modal').onclick = function() {
+    document.getElementById('booking-modal').classList.add('hidden');
+    document.body.style.overflow = '';
+    document.getElementById('form-status').textContent = '';
+    document.getElementById('booking-form').reset();
+  };
+});
+
+
+const googleScriptURL = 'https://script.google.com/macros/s/AKfycbxfbgE7eZ9W0iFl9zIRQVbiBTDXreM8ZCsFjJDHI7bu3BlBfpOowIPJ8VBy6NKIxyuaaQ/exec'; // paste your script link here
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById('booking-form').onsubmit = async function(e) {
+    e.preventDefault();
+    const status = document.getElementById('form-status');
+    status.textContent = 'Submitting...';
+    const formData = new FormData(e.target);
+    try {
+      const res = await fetch(googleScriptURL, {
+        method: 'POST',
+        body: formData
+      });
+      if (res.ok) {
+        status.textContent = 'Booking submitted! We will contact you soon.';
+        setTimeout(() => {
+          document.getElementById('booking-modal').classList.add('hidden');
+          document.body.style.overflow = '';
+          e.target.reset();
+        }, 1800);
+      } else {
+        status.textContent = 'Error submitting. Please try again.';
+      }
+    } catch {
+      status.textContent = 'Error connecting. Please try later.';
+    }
+  };
+});
+
+
+</script>
+
+
 
 </body>
 </html>
